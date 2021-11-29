@@ -34,10 +34,10 @@ export default function Header() {
 
     const Links = () => (
         <>
-            <Link href="#home">Főoldal</Link>
-            <Link href="#pricing">Áraink</Link>
-            <Link href="#comments">Vélemények</Link>
-            <Link href="#footer">Kapcsolat</Link>
+            <Link href="#fooldal">Főoldal</Link>
+            <Link href="#araink">Áraink</Link>
+            <Link href="#velemenyek">Vélemények</Link>
+            <Link href="#kapcsolat">Kapcsolat</Link>
         </>
     );
 
