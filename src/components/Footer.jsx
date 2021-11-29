@@ -6,75 +6,46 @@ export default function Footer() {
             <GridContainer>
 
                 <div>
-                    <h5>Quick Links</h5>
-                    <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Features</li>
-                        <li>Pricing</li>
-                        <li>Trainers</li>
-                        <li>Blogs</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h5>Opening Hours</h5>
+                    <h2>Gyors linkek</h2>
                     <ul>
                         <li>
-                            <span>Monday:</span><span>7.00am - 10.30pm</span>
+                            <a href="#fooldal">Főoldal</a>
                         </li>
                         <li>
-                            <span>Tuesday:</span><span>7.00am - 10.30pm</span>
+                            <a href="#araink">Áraink</a>
                         </li>
                         <li>
-                            <span>Wednesday:</span><span>7.00am - 10.30pm</span>
+                            <a href="#velemenyek">Vélemények</a>
                         </li>
                         <li>
-                            <span>Thursday:</span><span>7.00am - 10.30pm</span>
-                        </li>
-                        <li>
-                            <span>Friday:</span><span>7.00am - 10.30pm</span>
-                        </li>
-                        <li>
-                            <span>Saturday:</span><span>7.00am - 10.30pm</span>
-                        </li>
-                        <li>
-                            <span>Sunday:</span><span>7.00am - 10.30pm</span>
+                            <a href="#kapcsolat">Kapcsolat</a>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5>Reach Us</h5>
+                    <h2>Elérhetőségeink</h2>
                     <ul>
                         <li>
-                            <ion-icon name="call"></ion-icon><span>+456 643 345</span>
+                            <ion-icon name="call"></ion-icon><span>+36 88 453 122</span>
                         </li>
                         <li>
-                            <ion-icon name="call"></ion-icon><span>+456 643 355</span>
+                            <ion-icon name="call"></ion-icon><span>+36 70 31 22 091</span>
                         </li>
                         <li>
-                            <ion-icon name="mail"></ion-icon><span>kukac@kukac.com.co.uk</span>
+                            <ion-icon name="mail"></ion-icon><span>dreissiger@gmail.com</span>
                         </li>
                         <li>
-                            <ion-icon name="location"></ion-icon><span>Indiana, Main street</span>
-                        </li>
-                        <li>
-                            <div>
-                                <ion-icon name="logo-facebook"></ion-icon>
-                                <ion-icon name="logo-twitter"></ion-icon>
-                                <ion-icon name="logo-instagram"></ion-icon>
-                                <ion-icon name="logo-linkedin"></ion-icon>
-                            </div>
+                            <ion-icon name="location"></ion-icon><span>8413 Eplény Veszprémi utca 41</span>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5>NEWSLETTER</h5>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, expedita?</p>
-                    <input placeholder="you know what..." />
-                    <button>Subscribe</button>
+                    <h2>Írjon nekünk</h2>
+                    <p>Számunka fontos a véleménye, visszajelzése</p>
+                    <textarea placeholder="Kedves Bakonyi Apartmanház..."></textarea>
+                    <button>Elküldöm</button>
                 </div>
 
             </GridContainer>
@@ -106,9 +77,9 @@ const GridContainer = styled.div`
 
     >div:nth-child(1) {
 
-        h5 {
+        h2 {
             font-size: 1rem;
-            color: var(--white);
+            color: var(--night);
             margin-bottom: 1rem;
         }
 
@@ -119,47 +90,19 @@ const GridContainer = styled.div`
             gap: 1rem;
 
             li {
-                font-size: 1rem;
-                color: var(--light-white);
-                cursor: pointer;
+
+                a {
+                    font-size: 1rem;
+                    color: var(--light-night);
+                    text-decoration: none;
+                }
             }
         }
     }
 
     >div:nth-child(2) {
 
-        h5 {
-            font-size: 1rem;
-            color: var(--white);
-            margin-bottom: 1rem;
-        }
-
-        ul {
-            list-style-type: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-
-            li {
-                
-                span:nth-child(1) {
-                    font-size: 1rem;
-                    color: var(--light-white);
-                    display: inline-block;
-                    margin-right: 0.5rem;
-                }
-
-                span:nth-child(2) {
-                    font-size: 1rem;
-                    color: var(--red);
-                }
-            }
-        }
-    }
-
-    >div:nth-child(3) {
-
-        h5 {
+        h2 {
             font-size: 1rem;
             color: var(--white);
             margin-bottom: 1rem;
@@ -175,32 +118,22 @@ const GridContainer = styled.div`
                 
                 >ion-icon {
                     font-size: 1rem;
-                    color: var(--red);
+                    color: var(--night);
                     margin-right: 0.5rem;
                 }
 
                 span {
                     font-size: 1rem;
                     color: var(--light-white);
-                }
-
-                div {
-                    display: flex;
-                    gap: 1.5rem;
-
-                    ion-icon {
-                        font-size: 1.5rem;
-                        color: var(--light-white);
-                        cursor: pointer;
-                    }
+                    letter-spacing: 0.125rem;
                 }
             }
         }
     }
 
-    >div:nth-child(4) {
+    >div:nth-child(3) {
         
-        h5 {
+        h2 {
             font-size: 1rem;
             color: var(--white);
             margin-bottom: 1rem;
