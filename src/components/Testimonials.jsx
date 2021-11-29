@@ -10,10 +10,13 @@ export default function Testimonials() {
         <Container data-component="testimonials" id="velemenyek">
 
             <Header>
-                <p>Testimonials</p>
-                <h3>What Our Clients Say</h3>
-                <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus blanditiis repellendus dicta magni quidem vel quos sapiente. Excepturi, ab est?</div>
-                <button>Read More</button>
+                <p>Vélemények</p>
+                <h2>Vendégeink írták</h2>
+                <div>
+                    Számunkra nagyon fontos vendégeink elégedettsége, ezért mindig örömmel tölt el,
+                    amikor elutazásuk után pozitív visszajelzést kapunk.
+                </div>
+                <button>Még több vélemény</button>
             </Header>
 
             <SwiperContainer>
@@ -31,61 +34,46 @@ export default function Testimonials() {
                 >
                     <SwiperSlide>
                         <SlideItem>
-                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, voluptatem.</div>
                             <div>
-                                <div>
-                                    <img src="https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="image" loading="lazy" />
-                                    <div>
-                                        <p>Mary Jane</p>
-                                        <span>Designer</span>
-                                    </div>
-                                </div>
-                                <i className='bx bxs-quote-right'></i>
+                                Szép, tiszta és kényelmes szobát kaptunk modern berendezéssel, szép fürdőszobával. Közel van a bolt is, a buszmegálló is, a természet is.
+                                A szállás éttermében vacsoráztunk, az ételek nagyon finomak voltak, jóllaktunk. Köszönjük a vendéglátást!"
+                            </div>
+                            <div>
+                                Gergely
                             </div>
                         </SlideItem>
                     </SwiperSlide>
                     <SwiperSlide>
                         <SlideItem>
-                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, voluptatem.</div>
                             <div>
-                                <div>
-                                    <img src="https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="image" loading="lazy" />
-                                    <div>
-                                        <p>Mary Jane</p>
-                                        <span>Designer</span>
-                                    </div>
-                                </div>
-                                <i className='bx bxs-quote-right'></i>
+                                Nagyon családias, igazán vendéglátásra termett tulajdonosokkal találkozhattunk. Megtapasztalhattuk az igazi vendégszeretetet.
+                            </div>
+                            <div>
+                                Ferenc
                             </div>
                         </SlideItem>
                     </SwiperSlide>
                     <SwiperSlide>
                         <SlideItem>
-                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, voluptatem.</div>
                             <div>
-                                <div>
-                                    <img src="https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="image" loading="lazy" />
-                                    <div>
-                                        <p>Mary Jane</p>
-                                        <span>Designer</span>
-                                    </div>
-                                </div>
-                                <i className='bx bxs-quote-right'></i>
+                                Kedvesek a vendéglátók, segítőkészek. Nagyon tiszta és igazán otthonos, remekül felszerelt szálláshely.
+                                Teljesen alkalmas az önellátásra, de ha akartam a vendéglő részüket is igénybe vehettem.
+                                Élelmiszerbolt a közvetlen szomszédságban. Jövőre is ide mennék!
+                            </div>
+                            <div>
+                                Márta
                             </div>
                         </SlideItem>
                     </SwiperSlide>
                     <SwiperSlide>
                         <SlideItem>
-                            <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, voluptatem.</div>
                             <div>
-                                <div>
-                                    <img src="https://images.pexels.com/photos/2169434/pexels-photo-2169434.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="image" loading="lazy" />
-                                    <div>
-                                        <p>Mary Jane</p>
-                                        <span>Designer</span>
-                                    </div>
-                                </div>
-                                <i className='bx bxs-quote-right'></i>
+                                Mindenki nagyon kedves volt, segítőkész, látszott, hogy nekik fontos volt, hogy mi öten jól érezzük magunkat!
+                                A szállás tiszta volt, hűvös, csendes és nyugodt! Mindenben nagyon megfelelt, jól éreztük ott magunkat!
+                                Köszönjük szépen!
+                            </div>
+                            <div>
+                                Lívia
                             </div>
                         </SlideItem>
                     </SwiperSlide>
@@ -123,28 +111,28 @@ const Header = styled.div`
     p {
         font-size: 2rem;
         font-weight: 700;
-        color: var(--red);
+        color: var(--decor);
         margin-bottom: 1rem;
     }
 
-    h3 {
+    h2 {
         font-size: 2rem;
-        color: var(--white);
+        color: var(--night);
         text-align: center;
         margin-bottom: 1rem;
     }
 
     div {
         font-size: 1rem;
-        color: var(--light-white);
+        color: var(--light-night);
         text-align: center;
         margin-bottom: 2rem;
     }
 
     button {
         cursor: pointer;
-        background: var(--red);
-        color: var(--white);
+        background: transparent;
+        color: var(--decor);
         width: max-content;
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
@@ -165,10 +153,9 @@ const SlideItem = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #333;
-    padding: 1rem;
-    border-radius: 0.25rem;
-    aspect-ratio: 3 / 2;
+    background-color: var(--day);
+    padding: 1rem 1rem 2rem 1rem;
+    aspect-ratio: 1;
 
     @media(min-width: 1024px) {
         margin-bottom: 4rem;
@@ -176,47 +163,13 @@ const SlideItem = styled.div`
 
     >div:nth-child(1) {
         font-size: 1rem;
-        color: var(--light-white);
+        color: var(--light-night);
         margin-bottom: 1rem;
     }
 
     >div:nth-child(2) {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
-        >div {
-            display: flex;
-            align-items: center;
-
-            img {
-                width: 2rem;
-                height: 2rem;
-                border-radius: 50%;
-                object-fit: cover;
-                margin-right: 0.75rem;
-            }
-
-            >div {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-
-                p {
-                    font-size: 1rem;
-                    color: var(--white);
-                }
-
-                span {
-                    font-size: 0.75rem;
-                    color: var(--red);
-                }
-            }
-        }
-
-        i {
-            font-size: 2rem;
-            color: var(--red);
-        }
+        font-size: 1rem;
+        color: var(--light-night);
+        margin-bottom: 1rem;
     }
 `;
