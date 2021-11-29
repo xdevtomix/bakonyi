@@ -2,6 +2,7 @@ import styled, { StyleSheetManager } from "styled-components";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
+import Pricing from "./components/Pricing";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Container data-component="app">
         <Header />
         <Home />
+        <Pricing />
       </Container>
     </StyleSheetManager>
   )
