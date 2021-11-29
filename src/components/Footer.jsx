@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default function Footer() {
     return (
-        <Container data-component="footer">
+        <Container data-component="footer" id="kapcsolat">
             <GridContainer>
 
                 <div>
