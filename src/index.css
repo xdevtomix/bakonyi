@@ -28,7 +28,7 @@ html {
 }
 
 ::-webkit-scrollbar {
-    width: 0.25rem;
+    width: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -41,8 +41,6 @@ html {
 
 body {
     width: 100%;
-    /* max-width: 1024px;
-    margin: 0 auto; */
     background-color: var(--day);
 }
 

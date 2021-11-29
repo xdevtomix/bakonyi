@@ -2,93 +2,108 @@ import styled from "styled-components";
 
 export default function Pricing() {
     return (
-        <Container data-component="pricing" id="pricing">
+        <Container data-component="pricing" id="araink">
 
             <Title>
                 <div></div>
-                <h3>Pricing</h3>
+                <h2>Áraink</h2>
                 <div></div>
             </Title>
 
             <BoxesContainer>
 
                 <Box>
-                    <h5>Basic Plan</h5>
-                    <p>$<span>30</span>/month</p>
+                    <h2>Kisszoba 2</h2>
+                    <p>Akár <span>4500 Ft</span> / éj</p>
                     <ul>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Personal Training</span>
+                            <span>1 fő</span>
+                            <span>7000 Ft</span>
                         </li>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Cardio Exercises</span>
-                        </li>
-                        <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Weight Lifting</span>
-                        </li>
-                        <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Diet Plans</span>
-                        </li>
-                        <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Overall Results</span>
+                            <span>2 fő</span>
+                            <span>9000 Ft</span>
                         </li>
                     </ul>
                 </Box>
 
                 <Box>
-                    <h5>Medium Plan</h5>
-                    <p>$<span>60</span>/month</p>
+                    <h2>Kisszoba 1 + 1</h2>
+                    <p>Akár <span>3300 Ft</span> / éj</p>
                     <ul>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Personal Training</span>
+                            <span>1 fő</span>
+                            <span>7000 Ft</span>
                         </li>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Cardio Exercises</span>
+                            <span>2 fő</span>
+                            <span>9000 Ft</span>
                         </li>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Weight Lifting</span>
-                        </li>
-                        <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Diet Plans</span>
-                        </li>
-                        <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Overall Results</span>
+                            <span>3 fő</span>
+                            <span>11000 Ft</span>
                         </li>
                     </ul>
                 </Box>
 
                 <Box>
-                    <h5>Premium Plan</h5>
-                    <p>$<span>90</span>/month</p>
+                    <h2>Apartman 5</h2>
+                    <p>Akár <span>4000 Ft</span> / éj</p>
                     <ul>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Personal Training</span>
+                            <span>1 fő</span>
+                            <span>8000 Ft</span>
                         </li>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Cardio Exercises</span>
+                            <span>2 fő</span>
+                            <span>12000 Ft</span>
                         </li>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Weight Lifting</span>
+                            <span>3 fő</span>
+                            <span>15000 Ft</span>
                         </li>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Diet Plans</span>
+                            <span>4 fő</span>
+                            <span>17000 Ft</span>
                         </li>
                         <li>
-                            <ion-icon name="checkmark-sharp"></ion-icon>
-                            <span>Overall Results</span>
+                            <span>5 fő</span>
+                            <span>19000 Ft</span>
+                        </li>
+                    </ul>
+                </Box>
+
+                <Box>
+                    <h2>Apartman 7</h2>
+                    <p>Akár <span>4000 Ft</span> / éj</p>
+                    <ul>
+                        <li>
+                            <span>1 fő</span>
+                            <span>10000 Ft</span>
+                        </li>
+                        <li>
+                            <span>2 fő</span>
+                            <span>12000 Ft</span>
+                        </li>
+                        <li>
+                            <span>3 fő</span>
+                            <span>16000 Ft</span>
+                        </li>
+                        <li>
+                            <span>4 fő</span>
+                            <span>18000 Ft</span>
+                        </li>
+                        <li>
+                            <span>5 fő</span>
+                            <span>22000 Ft</span>
+                        </li>
+                        <li>
+                            <span>6 fő</span>
+                            <span>25000 Ft</span>
+                        </li>
+                        <li>
+                            <span>7 fő</span>
+                            <span>28000 Ft</span>
                         </li>
                     </ul>
                 </Box>
@@ -110,12 +125,12 @@ const Title = styled.div`
 
     div:nth-child(1) {
         width: 25%;
-        border: 0.5px solid var(--light-white);
+        border: 0.5px solid var(--light-night);
     }
 
-    h3 {
-        color: var(--red);
-        border: 1px solid var(--light-white);
+    h2 {
+        color: var(--light-night);
+        border: 1px solid var(--light-night);
         border-radius: 0.25rem;
         width: max-content;
         padding: 0.5rem 1rem;
@@ -123,7 +138,7 @@ const Title = styled.div`
 
     div:nth-child(3) {
         width: 25%;
-        border: 0.5px solid var(--light-white);
+        border: 0.5px solid var(--light-night);
     }
 `;
 
@@ -144,44 +159,36 @@ const Box = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--light-white);
+    border: 1px solid var(--light-night);
     border-radius: 0.25rem;
     padding: 1rem 2rem 0 2rem;
 
-    :nth-child(2) {
-        background: #333;
-    }
-
-    h5 {
-        color: var(--white);
+    h2 {
+        color: var(--night);
         font-size: 1.5rem;
         margin-bottom: 1rem;
     }
 
     p {
-        color: var(--white);
+        color: var(--night);
         font-size: 1rem;
         margin-bottom: 1rem;
 
         span {
-            color: var(--red);
-            font-size: 3rem;
+            color: var(--decor);
+            font-size: 1.5rem;
         }
     }
 
     ul {
+        width: 80%;
         list-style-type: none;
 
         li {
             display: flex;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 1rem;
-    
-            ion-icon {
-                color: var(--red);
-                font-size: 1.25rem;
-                margin-right: 0.5rem;
-            }
     
             span {
                 color: var(--light-white);
