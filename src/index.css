@@ -14,7 +14,9 @@
     --light-night: grey;
     --day: white;
     --light-day: whitesmoke;
-    --decor: darkturquoise;
+    --decor: red;
+
+    --header-height: 8rem;
 }
 
 html {
@@ -52,7 +54,7 @@ body {
     border-radius: 0 !important;
     width: 0.75rem !important;
     height: 0.75rem !important;
-    background-color: var(--white) !important;
+    background-color: var(--night) !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -60,6 +62,10 @@ body {
 }
 
 @media(min-width: 1024px) {
+    :root {
+      --header-height: 4rem;
+    }
+    
     html {
         font-size: 1.125rem;
     }

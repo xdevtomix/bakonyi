@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import bakonyiKulso1 from '/src/images/bakonyiapartmanhaz_kulso_1.jpg';
+import bakonyiKulso2 from '/src/images/bakonyiapartmanhaz_kulso_2.jpg';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -11,30 +14,24 @@ export default function Home() {
             <Swiper
                 modules={[Pagination, Autoplay]}
                 pagination={{ clickable: true }}
-                autoplay={{delay: 5000}}
+                autoplay={{ delay: 10 * 1000 }}
                 loop
             >
                 <SwiperSlide>
-                    <SlideItem image="https://images.pexels.com/photos/7675409/pexels-photo-7675409.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                        <span>Be Strong, Be Fit</span>
-                        <h3>Make Yourself Stronger Than Your Excuses</h3>
-                        <button>Get Started</button>
+                    <SlideItem>
+                        <img src={bakonyiKulso1} alt="bakonyiapartmanház" loading="lazy" />
+                        <span>Jöjjön el</span>
+                        <h2>Érezze otthon magát nálunk</h2>
+                        <a href="#kapcsolat">Írjon</a>
                     </SlideItem>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <SlideItem image="https://images.pexels.com/photos/7676552/pexels-photo-7676552.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                        <span>Be Strong, Be Fit</span>
-                        <h3>Make Yourself Stronger Than Your Excuses</h3>
-                        <button>Get Started</button>
-                    </SlideItem>
-                </SwiperSlide>
-
-                <SwiperSlide>
-                    <SlideItem image="https://images.pexels.com/photos/7676548/pexels-photo-7676548.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
-                        <span>Be Strong, Be Fit</span>
-                        <h3>Make Yourself Stronger Than Your Excuses</h3>
-                        <button>Get Started</button>
+                    <SlideItem>
+                        <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
+                        <span>Pihenjen</span>
+                        <h2>Reggelizzen a Bakonyban</h2>
+                        <a href="#kapcsolat">Hívjon</a>
                     </SlideItem>
                 </SwiperSlide>
             </Swiper>
@@ -43,30 +40,43 @@ export default function Home() {
 }
 
 const Container = styled.section`
+    width: 100%;
+    margin-top: var(--header-height);
 `;
 
 const SlideItem = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background : url(${({image}) => image});
-    background-position: center;
-    background-size: cover;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 2rem;
+    position: relative;
 
-    span {
-        color: var(--red);
-        margin-top: 20rem;
-        font-weight: 900;
-        font-size: 1.5rem;
+    img {
+        position: absolute;
+        top: 0;
+        left: 1%;
+        width: 98%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.25rem;
     }
 
-    h3 {
-        color: var(--white);
+    span {
+        color: var(--decor);
+        margin-top: 20rem;
+        margin-left: 2rem;
+        font-weight: 900;
+        font-size: 1.5rem;
+        z-index: 1;
+    }
+
+    h2 {
+        color: var(--day);
+        margin-left: 2rem;
         margin-bottom: 1rem;
         font-size: 2rem;
+        z-index: 1;
 
         @media(min-width: 1024px) {
             font-size: 3rem;
@@ -74,15 +84,18 @@ const SlideItem = styled.div`
         }
     }
 
-    button {
+    a {
         cursor: pointer;
-        background: var(--red);
-        color: var(--white);
+        background: var(--decor);
+        color: var(--day);
         width: max-content;
         padding: 0.5rem 1rem;
+        margin-left: 2rem;
         border-radius: 0.25rem;
         letter-spacing: 0.1rem;
         font-size: 1rem;
+        text-decoration: none;
+        z-index: 1;
 
         @media(min-width: 1024px) {
             font-size: 1.5rem;

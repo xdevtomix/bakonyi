@@ -65,7 +65,7 @@ const Container = styled.header`
     top: 0;
     left: 0;
     right: 0;
-    height: 4rem;
+    height: var(--header-height);
     z-index: 10;
     display: flex;
     align-items: center;
