@@ -43,7 +43,7 @@ export default function Header() {
 
     return (
         <Container data-component="header" isShadowVisible={isShadowVisible}>
-            <Logo href="#home">
+            <Logo href="#fooldal">
                 <span>Bakonyi</span>Apartmanház
             </Logo>
 
