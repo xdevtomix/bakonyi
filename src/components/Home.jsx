@@ -24,7 +24,7 @@ export default function Home() {
                         <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso1Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso1} />
-                            <img src={bakonyiKulso1} alt="bakonyiapartmanház" loading="lazy" />
+                            <img src={bakonyiKulso1} alt="bakonyiapartmanház" />
                         </picture>
                         <span>Jöjjön el</span>
                         <h2>Érezze otthon magát nálunk</h2>
