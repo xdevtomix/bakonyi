@@ -24,7 +24,7 @@ export default function Home() {
                         <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso1Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso1} />
-                            <img src={bakonyiKulso1} alt="bakonyiapartmanház" />
+                            <img src={bakonyiKulso1} alt="bakonyiapartmanház" loading="lazy" />
                         </picture>
                         <span>Jöjjön el</span>
                         <h2>Érezze otthon magát nálunk</h2>
@@ -37,7 +37,7 @@ export default function Home() {
                         <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso2Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso2} />
-                            <img src={bakonyiKulso2} alt="bakonyiapartmanház" />
+                            <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
                         </picture>
                         <span>Pihenjen</span>
                         <h2>Reggelizzen a Bakonyban</h2>
