@@ -56,6 +56,7 @@ export default function Footer() {
 const Container = styled.section`
     margin-top: 8rem;
     padding: 0 1rem 8rem 1rem;
+    background: var(--light-day);
 
     @media(min-width: 768px) {
         padding: 0 4rem 8rem 4rem;

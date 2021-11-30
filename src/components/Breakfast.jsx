@@ -59,6 +59,7 @@ const Container = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background: var(--light-day);
 
     @media(min-width: 1024px) {
         flex-direction: row;
