@@ -21,11 +21,12 @@ export default function Home() {
             >
                 <SwiperSlide>
                     <SlideItem>
-                        <picture>
+                        {/* <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso1Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso1} />
                             <img src={bakonyiKulso1} alt="bakonyiapartmanház" />
-                        </picture>
+                        </picture> */}
+                        <img src={bakonyiKulso1} alt="bakonyiapartmanház" />
                         <span>Jöjjön el</span>
                         <h2>Érezze otthon magát nálunk</h2>
                         <a href="#kapcsolat">Írjon</a>
@@ -34,11 +35,12 @@ export default function Home() {
 
                 <SwiperSlide>
                     <SlideItem>
-                        <picture>
+                        {/* <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso2Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso2} />
                             <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
-                        </picture>
+                        </picture> */}
+                        <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
                         <span>Pihenjen</span>
                         <h2>Reggelizzen a Bakonyban</h2>
                         <a href="#kapcsolat">Hívjon</a>
