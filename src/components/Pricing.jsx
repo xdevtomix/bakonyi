@@ -1,6 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 export default function Pricing() {
+    const [season, setSeason] = useState('summer');
+
     return (
         <Container data-component="pricing" id="araink">
 
@@ -9,6 +12,11 @@ export default function Pricing() {
                 <h2>Áraink</h2>
                 <div></div>
             </Title>
+
+            <SeasonSelector season={season}>
+                <ion-icon name="snow-outline" onClick={() => setSeason('winter')}></ion-icon>
+                <ion-icon name="sunny-outline" onClick={() => setSeason('summer')}></ion-icon>
+            </SeasonSelector>
 
             <BoxesContainer>
 
@@ -121,7 +129,7 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
 
     div:nth-child(1) {
         width: 25%;
@@ -139,6 +147,28 @@ const Title = styled.div`
     div:nth-child(3) {
         width: 25%;
         border: 0.5px solid var(--light-night);
+    }
+`;
+
+const SeasonSelector = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+
+    ion-icon {
+        font-size: 3rem;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    ion-icon[name="snow-outline"] {
+        color: ${({season}) => season === 'winter' ? 'var(--decor)' : 'var(--night)'};
+    }
+
+    ion-icon[name="sunny-outline"] {
+        color: ${({season}) => season === 'summer' ? 'var(--decor)' : 'var(--night)'};
     }
 `;
 
