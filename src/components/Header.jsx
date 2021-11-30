@@ -88,6 +88,7 @@ const Container = styled.header`
 
 const Logo = styled.a`
     font-size: 1.25rem;
+    font-weight: bold;
     color: var(--night);
     text-decoration: none;
     letter-spacing: 0.1rem;
