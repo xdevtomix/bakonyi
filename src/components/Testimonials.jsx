@@ -78,7 +78,7 @@ export default function Testimonials() {
                             <SwiperSlide key={id}>
                                 <SlideItem>
                                     <div>
-                                        {text}
+                                        "{text}"
                                     </div>
                                     <p>
                                         {name}
@@ -138,6 +138,7 @@ const SlideItem = styled.div`
 
     >div {
         font-size: 1rem;
+        font-style: italic;
         color: var(--light-night);
         margin-bottom: 1rem;
     }
