@@ -54,15 +54,21 @@ export default function Breakfast() {
 
 const Container = styled.section`
     width: 100%;
+    padding: 4rem 1rem;
     margin-top: 8rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--light-day);
+    gap: 4rem;
+    background: linear-gradient(to bottom, var(--light-day), var(--day), var(--light-day));
 
     @media(min-width: 1024px) {
         flex-direction: row;
+    }
+
+    @media(min-width: 1366px) {
+        gap: 8rem;
     }
 `;
 
@@ -71,11 +77,6 @@ const Header = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 1rem;
-
-    @media(min-width: 1024px) {
-        width: 55%;
-    }
 
     p {
         font-size: 2rem;
@@ -97,7 +98,7 @@ const Header = styled.div`
         font-size: 1rem;
         color: var(--light-night);
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         z-index: 1;
     }
     
@@ -106,7 +107,6 @@ const Header = styled.div`
         background: var(--decor);
         color: var(--day);
         padding: 0.5rem 1rem;
-        margin-bottom: 2rem;
         border-radius: 0.25rem;
         letter-spacing: 0.1rem;
         font-size: 1.5rem;
@@ -122,10 +122,18 @@ const Header = styled.div`
 
 const SwiperContainer = styled.div`
     width: 100%;
-    padding: 0 0.5rem;
+    transform: rotate(3deg);
+
+    @media(min-width: 768px) {
+        width: 45%;
+    }
 
     @media(min-width: 1024px) {
-        width: 45%;
+        width: 35%;
+    }
+
+    @media(min-width: 1536px) {
+        width: 25%;
     }
 `;
 
