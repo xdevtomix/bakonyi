@@ -1,8 +1,196 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+
+const seasons = [
+    {
+        id: 1,
+        duration: '2021.12.20 - 2022.02.28',
+        places: [
+            {
+                name: 'Szoba 2',
+                prices: [
+                    { label: '1 fő', price: '12 000 Ft' },
+                    { label: '2 fő', price: '15 000 Ft' },
+                ]
+            },
+            {
+                name: 'Szoba 3',
+                prices: [
+                    { label: '1 fő', price: '12 000 Ft' },
+                    { label: '2 fő', price: '15 000 Ft' },
+                    { label: '3 fő', price: '19 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 5',
+                prices: [
+                    { label: '1 fő', price: '15 000 Ft' },
+                    { label: '2 fő', price: '20 000 Ft' },
+                    { label: '3 fő', price: '26 000 Ft' },
+                    { label: '4 fő', price: '30 000 Ft' },
+                    { label: '5 fő', price: '33 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 7',
+                prices: [
+                    { label: '1 fő', price: '24 000 Ft' },
+                    { label: '2 fő', price: '24 000 Ft' },
+                    { label: '3 fő', price: '30 000 Ft' },
+                    { label: '4 fő', price: '35 000 Ft' },
+                    { label: '5 fő', price: '39 000 Ft' },
+                    { label: '6 fő', price: '42 000 Ft' },
+                    { label: '7 fő', price: '45 000 Ft' },
+                ]
+            }
+        ],
+    },
+    {
+        id: 2,
+        duration: '2022.03.01 - 2022.06.15',
+        places: [
+            {
+                name: 'Szoba 2',
+                prices: [
+                    { label: '1 fő', price: '10 000 Ft' },
+                    { label: '2 fő', price: '14 000 Ft' },
+                ]
+            },
+            {
+                name: 'Szoba 3',
+                prices: [
+                    { label: '1 fő', price: '10 000 Ft' },
+                    { label: '2 fő', price: '14 000 Ft' },
+                    { label: '3 fő', price: '19 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 5',
+                prices: [
+                    { label: '1 fő', price: '15 000 Ft' },
+                    { label: '2 fő', price: '17 000 Ft' },
+                    { label: '3 fő', price: '23 000 Ft' },
+                    { label: '4 fő', price: '27 000 Ft' },
+                    { label: '5 fő', price: '30 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 7',
+                prices: [
+                    { label: '1 fő', price: '19 000 Ft' },
+                    { label: '2 fő', price: '20 000 Ft' },
+                    { label: '3 fő', price: '25 000 Ft' },
+                    { label: '4 fő', price: '29 000 Ft' },
+                    { label: '5 fő', price: '32 000 Ft' },
+                    { label: '6 fő', price: '37 000 Ft' },
+                    { label: '7 fő', price: '42 000 Ft' },
+                ]
+            }
+        ],
+    },
+    {
+        id: 3,
+        duration: '2022.06.16 - 2022.08.31',
+        places: [
+            {
+                name: 'Szoba 2',
+                prices: [
+                    { label: '1 fő', price: '12 000 Ft' },
+                    { label: '2 fő', price: '15 000 Ft' },
+                ]
+            },
+            {
+                name: 'Szoba 3',
+                prices: [
+                    { label: '1 fő', price: '12 000 Ft' },
+                    { label: '2 fő', price: '15 000 Ft' },
+                    { label: '3 fő', price: '19 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 5',
+                prices: [
+                    { label: '1 fő', price: '15 000 Ft' },
+                    { label: '2 fő', price: '20 000 Ft' },
+                    { label: '3 fő', price: '26 000 Ft' },
+                    { label: '4 fő', price: '30 000 Ft' },
+                    { label: '5 fő', price: '33 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 7',
+                prices: [
+                    { label: '1 fő', price: '24 000 Ft' },
+                    { label: '2 fő', price: '24 000 Ft' },
+                    { label: '3 fő', price: '30 000 Ft' },
+                    { label: '4 fő', price: '35 000 Ft' },
+                    { label: '5 fő', price: '39 000 Ft' },
+                    { label: '6 fő', price: '42 000 Ft' },
+                    { label: '7 fő', price: '45 000 Ft' },
+                ]
+            }
+        ],
+    },
+    {
+        id: 4,
+        duration: '2022.09.01 - 2022.12.19',
+        places: [
+            {
+                name: 'Szoba 2',
+                prices: [
+                    { label: '1 fő', price: '10 000 Ft' },
+                    { label: '2 fő', price: '14 000 Ft' },
+                ]
+            },
+            {
+                name: 'Szoba 3',
+                prices: [
+                    { label: '1 fő', price: '10 000 Ft' },
+                    { label: '2 fő', price: '14 000 Ft' },
+                    { label: '3 fő', price: '19 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 5',
+                prices: [
+                    { label: '1 fő', price: '15 000 Ft' },
+                    { label: '2 fő', price: '17 000 Ft' },
+                    { label: '3 fő', price: '23 000 Ft' },
+                    { label: '4 fő', price: '27 000 Ft' },
+                    { label: '5 fő', price: '30 000 Ft' },
+                ]
+            },
+            {
+                name: 'Apartman 7',
+                prices: [
+                    { label: '1 fő', price: '19 000 Ft' },
+                    { label: '2 fő', price: '20 000 Ft' },
+                    { label: '3 fő', price: '25 000 Ft' },
+                    { label: '4 fő', price: '29 000 Ft' },
+                    { label: '5 fő', price: '32 000 Ft' },
+                    { label: '6 fő', price: '37 000 Ft' },
+                    { label: '7 fő', price: '42 000 Ft' },
+                ]
+            }
+        ],
+    },
+];
 
 export default function Pricing() {
-    const [season, setSeason] = useState('summer');
+    const [season, setSeason] = useState(1);
+    const swiperRef = useRef(null);
+
+    const onSwiper = (swiper) => {
+        swiperRef.current = swiper;
+    };
+
+    const handleSeasonChange = (id) => {
+        setSeason(id);
+        swiperRef.current.slideTo(id - 1, 1000);
+    };
 
     return (
         <Container data-component="pricing" id="araink">
@@ -14,108 +202,37 @@ export default function Pricing() {
             </Title>
 
             <SeasonSelector season={season}>
-                <ion-icon name="snow-outline" onClick={() => setSeason('winter')}></ion-icon>
-                <ion-icon name="sunny-outline" onClick={() => setSeason('summer')}></ion-icon>
+                {seasons.map((season) => (
+                    <div key={season.id} onClick={() => handleSeasonChange(season.id)}>{season.duration}</div>
+                ))}
             </SeasonSelector>
 
-            <BoxesContainer>
+            <Swiper allowTouchMove={false} onSwiper={(swiper) => onSwiper(swiper)}>
 
-                <Box>
-                    <h2>Kisszoba 2</h2>
-                    <p>Akár <span>4500 Ft</span> / éj</p>
-                    <ul>
-                        <li>
-                            <span>1 fő</span>
-                            <span>7000 Ft</span>
-                        </li>
-                        <li>
-                            <span>2 fő</span>
-                            <span>9000 Ft</span>
-                        </li>
-                    </ul>
-                </Box>
+                {seasons.map((season) => (
+                    <SwiperSlide key={season.id}>
+                        <BoxesContainer>
 
-                <Box>
-                    <h2>Kisszoba 1 + 1</h2>
-                    <p>Akár <span>3300 Ft</span> / éj</p>
-                    <ul>
-                        <li>
-                            <span>1 fő</span>
-                            <span>7000 Ft</span>
-                        </li>
-                        <li>
-                            <span>2 fő</span>
-                            <span>9000 Ft</span>
-                        </li>
-                        <li>
-                            <span>3 fő</span>
-                            <span>11000 Ft</span>
-                        </li>
-                    </ul>
-                </Box>
+                            {season.places.map((place) => (
+                                <Box key={place.name}>
+                                    <h2>{place.name}</h2>
+                                    <ul>
+                                        {place.prices.map((price) => (
+                                            <li key={price.label}>
+                                                <span>{price.label}</span>
+                                                <span>{price.price}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </Box>
+                            ))}
 
-                <Box>
-                    <h2>Apartman 5</h2>
-                    <p>Akár <span>4000 Ft</span> / éj</p>
-                    <ul>
-                        <li>
-                            <span>1 fő</span>
-                            <span>8000 Ft</span>
-                        </li>
-                        <li>
-                            <span>2 fő</span>
-                            <span>12000 Ft</span>
-                        </li>
-                        <li>
-                            <span>3 fő</span>
-                            <span>15000 Ft</span>
-                        </li>
-                        <li>
-                            <span>4 fő</span>
-                            <span>17000 Ft</span>
-                        </li>
-                        <li>
-                            <span>5 fő</span>
-                            <span>19000 Ft</span>
-                        </li>
-                    </ul>
-                </Box>
+                        </BoxesContainer>
+                    </SwiperSlide>
+                ))}
+                
+            </Swiper>
 
-                <Box>
-                    <h2>Apartman 7</h2>
-                    <p>Akár <span>4000 Ft</span> / éj</p>
-                    <ul>
-                        <li>
-                            <span>1 fő</span>
-                            <span>10000 Ft</span>
-                        </li>
-                        <li>
-                            <span>2 fő</span>
-                            <span>12000 Ft</span>
-                        </li>
-                        <li>
-                            <span>3 fő</span>
-                            <span>16000 Ft</span>
-                        </li>
-                        <li>
-                            <span>4 fő</span>
-                            <span>18000 Ft</span>
-                        </li>
-                        <li>
-                            <span>5 fő</span>
-                            <span>22000 Ft</span>
-                        </li>
-                        <li>
-                            <span>6 fő</span>
-                            <span>25000 Ft</span>
-                        </li>
-                        <li>
-                            <span>7 fő</span>
-                            <span>28000 Ft</span>
-                        </li>
-                    </ul>
-                </Box>
-            </BoxesContainer>
         </Container>
     );
 }
@@ -129,9 +246,9 @@ const Title = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
-    div:nth-child(1) {
+    div {
         width: 25%;
         border: 0.5px solid var(--light-night);
     }
@@ -143,32 +260,27 @@ const Title = styled.div`
         width: max-content;
         padding: 0.5rem 1rem;
     }
-
-    div:nth-child(3) {
-        width: 25%;
-        border: 0.5px solid var(--light-night);
-    }
 `;
 
 const SeasonSelector = styled.div`
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
 
-    ion-icon {
-        font-size: 3rem;
-        border-radius: 50%;
+    div {
+        border: 1px solid var(--light-night);
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
         cursor: pointer;
+        transition: transform 200ms;
     }
 
-    ion-icon[name="snow-outline"] {
-        color: ${({season}) => season === 'winter' ? 'var(--decor)' : 'var(--night)'};
-    }
-
-    ion-icon[name="sunny-outline"] {
-        color: ${({season}) => season === 'summer' ? 'var(--decor)' : 'var(--night)'};
+    div:nth-child(${({season}) => season}) {
+        color: var(--decor);
+        transform: scale(1.1);
     }
 `;
 
@@ -196,22 +308,12 @@ const Box = styled.div`
     h2 {
         color: var(--night);
         font-size: 1.5rem;
+        padding: 0 1rem;
         margin-bottom: 1rem;
-    }
-
-    p {
-        color: var(--night);
-        font-size: 1rem;
-        margin-bottom: 1rem;
-
-        span {
-            color: var(--decor);
-            font-size: 1.5rem;
-        }
     }
 
     ul {
-        width: 80%;
+        width: 100%;
         list-style-type: none;
 
         li {
@@ -221,7 +323,7 @@ const Box = styled.div`
             margin-bottom: 1rem;
     
             span {
-                color: var(--light-white);
+                color: var(--light-night);
                 font-size: 1rem;
             }
         }
