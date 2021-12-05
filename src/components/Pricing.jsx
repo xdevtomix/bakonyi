@@ -230,7 +230,7 @@ export default function Pricing() {
                         </BoxesContainer>
                     </SwiperSlide>
                 ))}
-                
+
             </Swiper>
 
         </Container>
@@ -271,6 +271,7 @@ const SeasonSelector = styled.div`
     margin-bottom: 4rem;
 
     div {
+        color: var(--light-night);
         border: 1px solid var(--light-night);
         border-radius: 0.25rem;
         padding: 0.5rem 1rem;
@@ -297,19 +298,18 @@ const BoxesContainer = styled.div`
 `;
 
 const Box = styled.div`
-    width: max-content;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--light-night);
     border-radius: 0.25rem;
-    padding: 1rem 2rem 0 2rem;
 
     h2 {
         color: var(--night);
         font-size: 1.5rem;
-        padding: 0 1rem;
+        padding: 1rem 4rem;
         margin-bottom: 1rem;
+        background-color: var(--light-day);
     }
 
     ul {
@@ -319,7 +319,8 @@ const Box = styled.div`
         li {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
+            gap: 1rem;
             margin-bottom: 1rem;
     
             span {
