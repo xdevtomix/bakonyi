@@ -36,7 +36,7 @@ export default function About() {
 
             <Content>
                 <span>Egy pár gondolat rólunk</span>
-                <h4>Arra törekszünk, hogy Ön jól érezze magát</h4>
+                <h2>Arra törekszünk, hogy Ön jól érezze magát</h2>
                 <p>Íme néhány a szolgáltatásink listájából:</p>
 
                 <BoxesContainer>
@@ -72,7 +72,7 @@ const Content = styled.div`
         margin-bottom: 0.5rem;
     }
 
-    >h4 {
+    >h2 {
         color: var(--night);
         font-size: 1.5rem;
         margin-bottom: 0.5rem;
