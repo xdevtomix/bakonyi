@@ -44,7 +44,7 @@ export default function About() {
                         <Box key={item.id}>
                             <div>
                                 <ion-icon name={item.icon}></ion-icon>
-                                <h5>{item.header}</h5>
+                                <h2>{item.header}</h2>
                             </div>
                             <p>{item.text}</p>
                         </Box>
@@ -119,7 +119,7 @@ const Box = styled.div`
             margin-right: 0.5rem;
         }
     
-        h5 {
+        h2 {
             color: var(--night);
             font-size: 1rem;
         }
