@@ -128,5 +128,6 @@ const Box = styled.div`
     p {
         color: var(--light-night);
         font-size: 1rem;
+        line-height: 1.5rem;
     }
 `;
