@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import styled from "styled-components";
 
 export default function Header() {
-    const mediaQuery = window.matchMedia('(max-width: 1023px)');
+    const mediaQuery = window.matchMedia('(max-width: 1365px)');
 
     const [isSmallScreen, setIsSmallScreen] = useState(mediaQuery.matches);
     const [isVerticalMenuVisible, setIsVerticalMenuVisible] = useState(false);
@@ -74,10 +74,6 @@ const Container = styled.header`
     background-color: var(--day);
     box-shadow: ${({isShadowVisible}) => isShadowVisible ? '0 0 1rem var(--light-night)' : ''};
     padding: 0 2rem;
-
-    @media(min-width: 1024px) {
-        padding: 0 4rem;
-    }
 
     ion-icon {
         color: var(--night);

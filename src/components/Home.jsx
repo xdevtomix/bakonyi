@@ -41,8 +41,8 @@ export default function Home() {
                             <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
                         </picture> */}
                         <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
-                        <span>Pihenjen</span>
-                        <h2>Reggelizzen a Bakonyban</h2>
+                        <span>Pihenjen és azután...</span>
+                        <h2>...induljon a nap egy finom reggelivel</h2>
                         <a href="#kapcsolat">Hívjon</a>
                     </SlideItem>
                 </SwiperSlide>
@@ -61,8 +61,9 @@ const SlideItem = styled.div`
     height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     position: relative;
+    padding-bottom: 2rem;
 
     img {
         position: absolute;
@@ -76,7 +77,6 @@ const SlideItem = styled.div`
 
     span {
         color: var(--decor);
-        margin-top: 20rem;
         margin-left: 2rem;
         font-weight: 900;
         font-size: 1.5rem;
@@ -89,11 +89,6 @@ const SlideItem = styled.div`
         margin-bottom: 1rem;
         font-size: 2rem;
         z-index: 1;
-
-        @media(min-width: 1024px) {
-            font-size: 3rem;
-            max-width: 50%;
-        }
     }
 
     a {

@@ -15,7 +15,7 @@ export default function Breakfast() {
             <Header>
                 <p>REGGELI</p>
                 <h2>Akár szobaszervízzel</h2>
-                <div>Egészséges és finom reggeli a szobájában vagy az étteremben</div>
+                <div>Egészséges és finom reggeli a szobájában vagy a büfében</div>
                 <a href="https://mokus.vercel.app" target="_blank" rel="noopener">
                     <ion-icon name="log-in-outline"></ion-icon>
                     <span>Mókusbüfé</span>
