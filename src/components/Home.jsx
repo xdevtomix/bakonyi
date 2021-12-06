@@ -63,7 +63,7 @@ const SlideItem = styled.div`
     flex-direction: column;
     justify-content: flex-end;
     position: relative;
-    padding-bottom: 2rem;
+    padding-bottom: 4rem;
 
     img {
         position: absolute;
