@@ -11,6 +11,9 @@ export default function Footer() {
                         <a href="#fooldal">Főoldal</a>
                     </li>
                     <li>
+                        <a href="#rolunk">Rólunk</a>
+                    </li>
+                    <li>
                         <a href="#araink">Áraink</a>
                     </li>
                     <li>

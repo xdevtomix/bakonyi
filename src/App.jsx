@@ -2,6 +2,7 @@ import styled, { StyleSheetManager } from "styled-components";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
+import About from "./components/About";
 import Pricing from "./components/Pricing";
 import Breakfast from "./components/Breakfast";
 import Testimonials from "./components/Testimonials";
@@ -13,6 +14,7 @@ export default function App() {
       <Container data-component="app">
         <Header />
         <Home />
+        <About />
         <Pricing />
         <Breakfast />
         <Testimonials />
