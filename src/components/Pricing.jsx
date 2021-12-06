@@ -201,6 +201,8 @@ export default function Pricing() {
                 <div></div>
             </Title>
 
+            <Info>Mikor jönne? Kattintson!</Info>
+
             <SeasonSelector season={season}>
                 {seasons.map((season) => (
                     <div key={season.id} onClick={() => handleSeasonChange(season.id)}>{season.duration}</div>
@@ -240,6 +242,13 @@ export default function Pricing() {
 const Container = styled.section`
     margin-top: 8rem;
     padding: 0 1rem;
+`;
+
+const Info = styled.div`
+    text-align: center;
+    font-size: 1rem;
+    color: var(--light-night);
+    margin-bottom: 2rem;
 `;
 
 const Title = styled.div`   
