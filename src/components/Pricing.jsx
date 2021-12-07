@@ -235,6 +235,10 @@ export default function Pricing() {
 
             </Swiper>
 
+            <PricesInfo>
+                Az árak egy éjszakára vonatkoznak és nem tartalmazzák az idegenforgalmi adót.
+            </PricesInfo>
+
         </Container>
     );
 }
@@ -288,7 +292,7 @@ const SeasonSelector = styled.div`
         transition: transform 200ms;
     }
 
-    div:nth-child(${({season}) => season}) {
+    div:nth-child(${({ season }) => season}) {
         color: var(--decor);
         transform: scale(1.1);
     }
@@ -338,4 +342,11 @@ const Box = styled.div`
             }
         }
     }
+`;
+
+const PricesInfo = styled.div`
+    text-align: center;
+    font-size: 1rem;
+    color: var(--light-night);
+    margin-top: 4rem;
 `;
