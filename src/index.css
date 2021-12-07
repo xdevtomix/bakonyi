@@ -14,7 +14,7 @@
     --light-night: grey;
     --day: white;
     --light-day: whitesmoke;
-    --decor: red;
+    --decor: hsl(165, 75%, 45%);
 
     --header-height: 8rem;
 }

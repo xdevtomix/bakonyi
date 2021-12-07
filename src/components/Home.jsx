@@ -27,8 +27,8 @@ export default function Home() {
                             <img src={bakonyiKulso1} alt="bakonyiapartmanház" />
                         </picture> */}
                         <img src={bakonyiKulso1} alt="bakonyiapartmanház" />
-                        <span>Jöjjön el</span>
-                        <h2>Érezze otthon magát nálunk</h2>
+                        <span>Jöjjön el...</span>
+                        <h2>...érezze otthon magát nálunk</h2>
                         <a href="#kapcsolat">Írjon</a>
                     </SlideItem>
                 </SwiperSlide>
@@ -80,11 +80,13 @@ const SlideItem = styled.div`
         margin-left: 2rem;
         font-weight: 900;
         font-size: 1.5rem;
+        letter-spacing: 0.1rem;
         z-index: 1;
     }
 
     h2 {
         color: var(--day);
+        max-width: 90%;
         margin-left: 2rem;
         margin-bottom: 1rem;
         font-size: 2rem;
@@ -103,9 +105,5 @@ const SlideItem = styled.div`
         font-size: 1rem;
         text-decoration: none;
         z-index: 1;
-
-        @media(min-width: 1024px) {
-            font-size: 1.5rem;
-        }
     }
 `;
