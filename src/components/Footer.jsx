@@ -57,6 +57,11 @@ export default function Footer() {
                             A 2021-es felújítás a Kisfaludy Program támogatásával valósult meg
                         </a>
                     </li>
+                    <li>
+                        <a href="https://siarena.hu" target="_blank" rel="noopener">
+                            siarena.hu
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -81,7 +86,7 @@ const Container = styled.div`
     }
 
     >div {
-        
+
         h2 {
             font-size: 1rem;
             color: var(--night);
