@@ -49,26 +49,39 @@ export default function Footer() {
                 </ul>
             </div>
 
+            <div>
+                <h2>Partnereink</h2>
+                <ul>
+                    <li>
+                        <a href="https://kisfaludyprogram.hu" target="_blank" rel="noopener">
+                            A 2021-es felújítás a Kisfaludy Program támogatásával valósult meg
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
         </Container>
     );
 }
 
 const Container = styled.div`
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 4rem;
     margin-top: 8rem;
     padding: 4rem 1rem;
     background: var(--light-day);
 
     @media(min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-evenly;
+        grid-template-columns: 1fr 1fr;
         padding: 8rem 2rem;
     }
 
-    >div {
+    @media(min-width: 1024px) {
+        grid-template-columns: 0.75fr 1.25fr 0.75fr;
+    }
 
+    >div {
+        
         h2 {
             font-size: 1rem;
             color: var(--night);
