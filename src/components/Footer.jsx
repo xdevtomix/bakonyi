@@ -43,6 +43,9 @@ export default function Footer() {
                     <li>
                         <ion-icon name="location"></ion-icon><span>8413 Eplény Veszprémi utca 41</span>
                     </li>
+                    <li>
+                        <ion-icon name="podium"></ion-icon><span>NTAK: MA19006009</span>
+                    </li>
                 </ul>
             </div>
 
