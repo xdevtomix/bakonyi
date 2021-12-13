@@ -9,10 +9,10 @@ const testimonials = [
     {
         id: 1,
         text: `
-            Szép, tiszta és kényelmes szobát kaptunk modern berendezéssel, szép fürdőszobával. Közel van a bolt is, a buszmegálló is, a természet is.
-            A szállás éttermében vacsoráztunk, az ételek nagyon finomak voltak, jóllaktunk. Köszönjük a vendéglátást!
+            Kedves, családias hangulat. Közvetlen, segítőkész tulajdonos. Bármilyen kéréssel vagy kérdéssel fordultunk hozzájuk, mindig készséggel segítettek.
+            Nagyon jól éreztük magunkat, csak köszönettel tartozunk a szállásadóknak.
         `,
-        name: 'Gergely'
+        name: 'Katalin'
     },
     {
         id: 2,
@@ -25,7 +25,6 @@ const testimonials = [
         id: 3,
         text: `
             Kedvesek a vendéglátók, segítőkészek. Nagyon tiszta és igazán otthonos, remekül felszerelt szálláshely.
-            Teljesen alkalmas az önellátásra, de ha akartam a vendéglő részüket is igénybe vehettem.
             Élelmiszerbolt a közvetlen szomszédságban. Jövőre is ide mennék!
         `,
         name: 'Márta'
