@@ -4,8 +4,11 @@ import styled from "styled-components";
 export default function Breakfast() {
     const [dishes, setDishes] = useState([]);
     const [dishId, setDishId] = useState(1);
+    const [showImage, setShowImage] = useState(false);
 
     const maxId = 16;
+    const intervalTime = 10 * 1000;
+    const fadeTime = 2 * 1000;
 
     const getSelectedDish = () => {
         const selectedDish = dishes.find((dish) => +dish.id === dishId);
@@ -28,8 +31,6 @@ export default function Breakfast() {
         const json = await response.json();
 
         setDishes(json.dishes);
-
-        return () => { };
     }, []);
 
     useEffect(async () => {
@@ -39,7 +40,7 @@ export default function Breakfast() {
 
         let intervalId = setInterval(() => {
             generateRandomDishId();
-        }, 10 * 1000);
+        }, intervalTime);
 
         generateRandomDishId();
 
@@ -47,6 +48,11 @@ export default function Breakfast() {
             clearInterval(intervalId);
         };
     }, []);
+
+    useEffect(() => {
+        setShowImage(true);
+        setTimeout(() => setShowImage(false), intervalTime - fadeTime);
+    }, [dishId]);
 
     return (
         <Container data-component="breakfast" id="reggeli">
@@ -60,7 +66,7 @@ export default function Breakfast() {
                 </a>
             </Header>
 
-            <ImageContainer>
+            <ImageContainer showImage={showImage} fadeTime={fadeTime}>
                 <div>
                     <span>{getSelectedDish().name}</span> <span>{getSelectedDish().price}</span>
                 </div>
@@ -144,6 +150,8 @@ const ImageContainer = styled.div`
     justify-content: center;
     gap: 1.5rem;
     transform: rotate(3deg);
+    opacity: ${({showImage}) => showImage ? '1' : '0'};
+    transition: ${({fadeTime}) => `opacity ${fadeTime}ms`};
 
     @media(min-width: 768px) {
         width: 50%;
