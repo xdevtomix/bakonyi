@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function Breakfast() {
     const [dishes, setDishes] = useState([]);
-    const [dishId, setDishId] = useState(1);
+    const [dishId, setDishId] = useState({ value: 1 });
     const [showImage, setShowImage] = useState(false);
 
     const maxId = 16;
@@ -11,7 +11,7 @@ export default function Breakfast() {
     const fadeTime = 2 * 1000;
 
     const getSelectedDish = () => {
-        const selectedDish = dishes.find((dish) => +dish.id === dishId);
+        const selectedDish = dishes.find((dish) => +dish.id === dishId.value);
         const dishToReturn = { name: '', price: '', src: '', };
 
         if (selectedDish) {
@@ -30,12 +30,12 @@ export default function Breakfast() {
         const response = await fetch('https://raw.githubusercontent.com/xdevtomix/mokus/main/src/assets/translations.json');
         const json = await response.json();
 
-        setDishes(json.dishes);
+        setDishes(json.dishes.filter((item) => item.role === 'dish'));
     }, []);
 
     useEffect(async () => {
         const generateRandomDishId = () => {
-            setDishId(Math.floor(Math.random() * maxId) + 1);
+            setDishId({ value: Math.floor(Math.random() * maxId) + 1 });
         };
 
         let intervalId = setInterval(() => {
@@ -150,8 +150,8 @@ const ImageContainer = styled.div`
     justify-content: center;
     gap: 1.5rem;
     transform: rotate(3deg);
-    opacity: ${({showImage}) => showImage ? '1' : '0'};
-    transition: ${({fadeTime}) => `opacity ${fadeTime}ms`};
+    opacity: ${({ showImage }) => showImage ? '1' : '0'};
+    transition: ${({ fadeTime }) => `opacity ${fadeTime}ms`};
 
     @media(min-width: 768px) {
         width: 50%;
