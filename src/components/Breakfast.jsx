@@ -1,15 +1,53 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import breakfast_1 from '/src/images/breakfast_1.jpeg';
-import breakfast_2 from '/src/images/breakfast_2.jpeg';
-import breakfast_3 from '/src/images/breakfast_3.jpeg';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 export default function Breakfast() {
+    const [dishes, setDishes] = useState([]);
+    const [dishId, setDishId] = useState(1);
+
+    const maxId = 16;
+
+    const getSelectedDish = () => {
+        const selectedDish = dishes.find((dish) => +dish.id === dishId);
+        const dishToReturn = { name: '', price: '', src: '', };
+
+        if (selectedDish) {
+            dishToReturn.name = selectedDish.hu;
+            dishToReturn.price = selectedDish.price;
+
+            if (selectedDish.url && selectedDish.url.endsWith('.jpeg')) {
+                dishToReturn.src = `https://raw.githubusercontent.com/xdevtomix/mokus/main/public${selectedDish.url.substring(1)}`;
+            }
+        }
+
+        return dishToReturn;
+    };
+
+    useEffect(async () => {
+        const response = await fetch('https://raw.githubusercontent.com/xdevtomix/mokus/main/src/assets/translations.json');
+        const json = await response.json();
+
+        setDishes(json.dishes);
+
+        return () => { };
+    }, []);
+
+    useEffect(async () => {
+        const generateRandomDishId = () => {
+            setDishId(Math.floor(Math.random() * maxId) + 1);
+        };
+
+        let intervalId = setInterval(() => {
+            generateRandomDishId();
+        }, 10 * 1000);
+
+        generateRandomDishId();
+
+        return () => {
+            clearInterval(intervalId);
+        };
+    }, []);
+
     return (
         <Container data-component="breakfast" id="reggeli">
             <Header>
@@ -18,36 +56,17 @@ export default function Breakfast() {
                 <div>Egészséges és finom reggeli a szobájában vagy a büfében</div>
                 <a href="https://mokus.vercel.app" target="_blank" rel="noopener">
                     <ion-icon name="log-in-outline"></ion-icon>
-                    <span>Mókusbüfé</span>
+                    <span>Étlap</span>
                 </a>
             </Header>
 
-            <SwiperContainer>
-                <Swiper
-                    modules={[Pagination, Autoplay]}
-                    pagination={{ clickable: true }}
-                    autoplay={{ delay: 10 * 1000 }}
-                    loop
-                >
-                    <SwiperSlide>
-                        <SlideItem>
-                            <img src={breakfast_1} alt="reggeli" loading="lazy" />
-                        </SlideItem>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <SlideItem>
-                            <img src={breakfast_2} alt="reggeli" loading="lazy" />
-                        </SlideItem>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                        <SlideItem>
-                            <img src={breakfast_3} alt="reggeli" loading="lazy" />
-                        </SlideItem>
-                    </SwiperSlide>
-                </Swiper>
-            </SwiperContainer>
+            <ImageContainer>
+                <div>
+                    <span>{getSelectedDish().name}</span> <span>{getSelectedDish().price}</span>
+                </div>
+                {getSelectedDish().src && <img src={getSelectedDish().src} alt={getSelectedDish().name} loading="lazy" />}
+                {!getSelectedDish().src && <ion-icon name="fast-food-outline"></ion-icon>}
+            </ImageContainer>
         </Container>
     );
 }
@@ -83,7 +102,6 @@ const Header = styled.div`
         font-weight: 700;
         color: var(--decor);
         margin-bottom: 1rem;
-        z-index: 1;
     }
     
     h2 {
@@ -91,7 +109,6 @@ const Header = styled.div`
         color: var(--night);
         text-align: center;
         margin-bottom: 1rem;
-        z-index: 1;
     }
     
     div {
@@ -99,9 +116,8 @@ const Header = styled.div`
         color: var(--light-night);
         text-align: center;
         margin-bottom: 4rem;
-        z-index: 1;
     }
-    
+
     a {
         text-decoration: none;
         background: var(--decor);
@@ -120,31 +136,46 @@ const Header = styled.div`
     }
 `;
 
-const SwiperContainer = styled.div`
+const ImageContainer = styled.div`
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
     transform: rotate(3deg);
 
     @media(min-width: 768px) {
-        width: 45%;
+        width: 50%;
     }
 
     @media(min-width: 1024px) {
-        width: 35%;
+        width: 40%;
     }
 
     @media(min-width: 1536px) {
-        width: 25%;
+        width: 30%;
     }
-`;
 
-const SlideItem = styled.div`
-    width: 100%;
-    aspect-ratio: 3 / 2;
+    div {
+        font-size: 1rem;
+        color: var(--light-night);
+
+        span:nth-child(2) {
+            color: var(--decor);
+            font-weight: bold;
+        }
+    }
 
     img {
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        aspect-ratio: 1 / 1;
         object-fit: cover;
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
+    }
+
+    ion-icon {
+        font-size: 12rem;
+        color: var(--light-night);
     }
 `;
