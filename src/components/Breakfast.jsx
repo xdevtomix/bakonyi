@@ -18,7 +18,7 @@ export default function Breakfast() {
             dishToReturn.name = selectedDish.hu;
             dishToReturn.price = selectedDish.price;
 
-            if (selectedDish.url && selectedDish.url.endsWith('.jpeg')) {
+            if (selectedDish.url && (selectedDish.url.endsWith('.jpeg') || selectedDish.url.endsWith('.jpg'))) {
                 dishToReturn.src = `https://raw.githubusercontent.com/xdevtomix/mokus/main/public${selectedDish.url.substring(1)}`;
             }
         }
@@ -26,14 +26,17 @@ export default function Breakfast() {
         return dishToReturn;
     };
 
-    useEffect(async () => {
-        const response = await fetch('https://raw.githubusercontent.com/xdevtomix/mokus/main/src/assets/translations.json');
-        const json = await response.json();
+    useEffect(() => {
+        const fetchData = async () => {
+            const response = await fetch('https://raw.githubusercontent.com/xdevtomix/mokus/main/src/assets/translations.json');
+            const json = await response.json();
 
-        setDishes(json.dishes.filter((item) => item.role === 'dish'));
+            setDishes(json.dishes.filter((item) => item.role === 'dish'));
+        };
+        fetchData();
     }, []);
 
-    useEffect(async () => {
+    useEffect(() => {
         const generateRandomDishId = () => {
             setDishId({ value: Math.floor(Math.random() * maxId) + 1 });
         };
