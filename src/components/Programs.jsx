@@ -123,13 +123,14 @@ const SwiperContainer = styled.div`
 `;
 
 const SlideItem = styled.div`
-    padding-bottom: 3rem;
+    padding-bottom: 5rem;
 
     img {
         width: 100%;
         aspect-ratio: 3 / 2;
         margin-bottom: 1rem;
         object-fit: cover;
+        border-radius: 0.25rem;
     }
 
     >div {
