@@ -6,6 +6,7 @@ import Introduction from "./components/Introduction";
 import About from "./components/About";
 import Pricing from "./components/Pricing";
 import Breakfast from "./components/Breakfast";
+import Programs from "./components/Programs";
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 
@@ -19,6 +20,7 @@ export default function App() {
         <About />
         <Pricing />
         <Breakfast />
+        <Programs />
         <Testimonials />
         <Footer />
       </Container>

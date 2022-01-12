@@ -20,6 +20,9 @@ export default function Footer() {
                         <a href="#reggeli">Reggeli</a>
                     </li>
                     <li>
+                        <a href="#latnivalok">Látnivalók</a>
+                    </li>
+                    <li>
                         <a href="#velemenyek">Vélemények</a>
                     </li>
                     <li>
