@@ -68,19 +68,22 @@ const Content = styled.div`
     >span {
         color: var(--decor);
         font-size: 1.25rem;
-        display: inline-block;
+        text-align: center;
+        display: block;
         margin-bottom: 0.5rem;
     }
 
     >h2 {
         color: var(--night);
         font-size: 1.5rem;
+        text-align: center;
         margin-bottom: 0.5rem;
     }
 
     >p {
         color: var(--light-night);
         font-size: 1rem;
+        text-align: center;
     }
 
     a {
