@@ -2,6 +2,10 @@ import styled from "styled-components";
 import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import bakonyiLatnivalo1 from '../images/bakony_latnivalo_1.jpeg';
+import bakonyiLatnivalo2 from '../images/bakony_latnivalo_2.jpeg';
+import bakonyiLatnivalo3 from '../images/bakony_latnivalo_3.jpeg';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -12,7 +16,7 @@ const programs = [
         date: '2021.07.23',
         header: 'Kirándulás. Utazás. Természet.',
         text: 'Bakonyi látnivalók - TOP 40 hely képekkel és térképpel',
-        imageUrl: '/src/images/bakony_latnivalo_1.jpeg',
+        imageUrl: bakonyiLatnivalo1,
         href: 'https://trekhunt.com/hu/article/bakony-latnivalok',
     },
     {
@@ -21,7 +25,7 @@ const programs = [
         date: '2021.01.22',
         header: 'Csodahelyek Magyarországon',
         text: '20+ bakancslistás látnivaló és kirándulás a Bakonyban',
-        imageUrl: '/src/images/bakony_latnivalo_2.jpeg',
+        imageUrl: bakonyiLatnivalo2,
         href: 'https://csodahelyek.hu/2021/01/22/bakancslistas-latnivalo-kirandulas-bakony',
     },
     {
@@ -30,7 +34,7 @@ const programs = [
         date: '2022.01.12',
         header: 'Fedezd fel a Bakony szépségét!',
         text: 'Programok, rendezvények, látnivalók a csodálatos Bakonyban',
-        imageUrl: '/src/images/bakony_latnivalo_3.jpeg',
+        imageUrl: bakonyiLatnivalo3,
         href: 'https://www.csodalatosbakony.hu',
     }
 ];
