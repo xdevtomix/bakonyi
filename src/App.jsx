@@ -8,6 +8,7 @@ import Pricing from "./components/Pricing";
 import Breakfast from "./components/Breakfast";
 import Programs from "./components/Programs";
 import Testimonials from "./components/Testimonials";
+import Gallery from "./components/Gallery";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Breakfast />
         <Programs />
         <Testimonials />
+        <Gallery />
         <Footer />
       </Container>
     </StyleSheetManager>

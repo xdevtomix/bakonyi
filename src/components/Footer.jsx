@@ -26,6 +26,9 @@ export default function Footer() {
                         <a href="#velemenyek">Vélemények</a>
                     </li>
                     <li>
+                        <a href="#galeria">Galéria</a>
+                    </li>
+                    <li>
                         <a href="#kapcsolat">Kapcsolat</a>
                     </li>
                 </ul>

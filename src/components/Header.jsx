@@ -40,6 +40,7 @@ export default function Header() {
             <Link href="#reggeli">Reggeli</Link>
             <Link href="#latnivalok">Látnivalók</Link>
             <Link href="#velemenyek">Vélemények</Link>
+            <Link href="#galeria">Galéria</Link>
             <Link href="#kapcsolat">Kapcsolat</Link>
         </>
     );
@@ -120,7 +121,7 @@ const Link = styled.a`
     color: var(--night);
     margin-bottom: 1rem;
     margin-right: 1rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-decoration: none;
 
     :hover {
