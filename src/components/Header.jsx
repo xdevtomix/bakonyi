@@ -119,7 +119,7 @@ const HorizontalMenu = styled.nav``;
 
 const Link = styled.a`
     color: var(--night);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     margin-right: 1rem;
     font-size: 1rem;
     text-decoration: none;
