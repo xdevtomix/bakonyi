@@ -2,9 +2,11 @@ import styled from "styled-components";
 import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import bakonyiLatnivalo1 from '../images/bakony_latnivalo_1.jpeg';
-import bakonyiLatnivalo2 from '../images/bakony_latnivalo_2.jpeg';
-import bakonyiLatnivalo3 from '../images/bakony_latnivalo_3.jpeg';
+import bakonyiLatnivalo1 from '../images/bakonyi_latnivalo_1.jpeg';
+import bakonyiLatnivalo2 from '../images/bakonyi_latnivalo_2.jpeg';
+import bakonyiLatnivalo3 from '../images/bakonyi_latnivalo_3.jpeg';
+import bakonyiLatnivalo4 from '../images/bakonyi_latnivalo_4.jpeg';
+import bakonyiLatnivalo5 from '../images/bakonyi_latnivalo_5.jpeg';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -36,6 +38,24 @@ const programs = [
         text: 'Programok, rendezvények, látnivalók a csodálatos Bakonyban',
         imageUrl: bakonyiLatnivalo3,
         href: 'https://www.csodalatosbakony.hu',
+    },
+    {
+        id: 4,
+        author: 'orszagjaro',
+        date: '2022.01.13',
+        header: 'Bakonyi látnivalók',
+        text: 'A Bakonyba látogatókat rengeteg látnivaló és program várja',
+        imageUrl: bakonyiLatnivalo4,
+        href: 'https://www.orszagjaro.net/bakonyi-latnivalok',
+    },
+    {
+        id: 5,
+        author: 'utazaskatalogus',
+        date: '2020.05.09',
+        header: 'Bakonyi kirándulások',
+        text: 'Aki szeret kirándulni, túrázni, annak igazi paradicsom ez a hegység',
+        imageUrl: bakonyiLatnivalo5,
+        href: 'https://utazaskatalogus.hu/bakony-latnivaloi-kirandulasi-lehetosegek',
     }
 ];
 
@@ -53,15 +73,15 @@ export default function Programs() {
                 <Swiper
                     modules={[Pagination, Autoplay]}
                     pagination={{ clickable: true }}
-                    autoplay={{ delay: 60 * 1000 }}
-                    loop
+                    /* autoplay={{ delay: 60 * 1000 }}
+                    loop */
                     spaceBetween={20}
                     breakpoints={{
                         768: {
                             slidesPerView: 2,
                         },
-                        1024: {
-                            slidesPerView: 4,
+                        1366: {
+                            slidesPerView: 3,
                         }
                     }}
                 >
