@@ -54,6 +54,11 @@ export default function Home() {
 const Container = styled.section`
     width: 100%;
     margin-top: var(--header-height);
+    padding: 0 0.25rem;
+
+    @media(min-width: 768px) {
+        padding: 0 1rem;
+    }
 `;
 
 const SlideItem = styled.div`
