@@ -68,12 +68,11 @@ const SlideItem = styled.div`
     img {
         position: absolute;
         top: 0;
-        left: 1%;
-        width: 98%;
+        left: 0;
+        width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: 0.25rem;
-        filter: saturate(80%);
     }
 
     span {
@@ -95,7 +94,6 @@ const SlideItem = styled.div`
     }
 
     a {
-        cursor: pointer;
         background: var(--decor);
         color: var(--day);
         width: max-content;
