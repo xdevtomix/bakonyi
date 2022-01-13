@@ -134,7 +134,7 @@ const SwiperContainer = styled.div`
 `;
 
 const SlideItem = styled.div`
-    padding-bottom: 3rem;
+    padding-bottom: 4rem;
 
     img {
         width: 100%;
@@ -148,12 +148,10 @@ const SlideItem = styled.div`
         font-size: 1rem;
         font-weight: bold;
         color: var(--night);
-        margin-bottom: 0.5rem;
     }
 
     p {
         font-size: 1rem;
         color: var(--light-night);
-        margin-bottom: 1rem;
     }
 `;
