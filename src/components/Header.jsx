@@ -108,19 +108,21 @@ const VerticalMenu = styled.nav`
     height: 100vh;
     background-color: var(--day);
     box-shadow: 0 0 0.125rem var(--light-night);
-    padding: 2rem 0 0 2rem;
+    padding: 2rem 1rem 0 2rem;
     display: flex;
     flex-direction: column;
+    gap: 1.5rem;
     transition: 250ms;
     transform: translate3d(${({ isVerticalMenuVisible }) => isVerticalMenuVisible ? '0' : '-100%'}, 0, 0);
 `;
 
-const HorizontalMenu = styled.nav``;
+const HorizontalMenu = styled.nav`
+    display: flex;
+    gap: 1rem;
+`;
 
 const Link = styled.a`
     color: var(--night);
-    margin-bottom: 1.5rem;
-    margin-right: 1rem;
     font-size: 1rem;
     text-decoration: none;
 
