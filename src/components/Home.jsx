@@ -73,6 +73,7 @@ const SlideItem = styled.div`
         height: 100%;
         object-fit: cover;
         border-radius: 0.25rem;
+        filter: saturate(80%);
     }
 
     span {
