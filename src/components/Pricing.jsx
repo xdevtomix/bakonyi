@@ -179,8 +179,44 @@ const seasons = [
     },
 ];
 
+const descriptions = {
+    'Szoba 2': [
+        { id: 1, text: 'Két férőhelyes' },
+        { id: 2, text: 'Franciaágyas' },
+        { id: 3, text: 'Fürdőszobával' },
+    ],
+    'Szoba 3': [
+        { id: 1, text: 'Két férőhelyes' },
+        { id: 2, text: 'Plusz felnőtt méretű pótágy' },
+        { id: 3, text: 'Klimatizált' },
+    ],
+    'Apartman 5': [
+        { id: 1, text: '32nm' },
+        { id: 2, text: 'Szoba, nappali, fürdőszoba' },
+        { id: 3, text: 'A szobában franciaágy plusz normál ágy' },
+        { id: 4, text: 'A nappaliban étkező- és ülőgarnitúra' },
+        { id: 5, text: 'A nappaliban kétszemélyes kinyitható fekhely' },
+        { id: 6, text: 'Felszerelt konyha' },
+    ],
+    'Apartman 7': [
+        { id: 1, text: '44nm' },
+        { id: 2, text: '2 egymástól független szoba, nappali, fürdőszoba' },
+        { id: 3, text: 'Az egyik szoba két, a másik három ágyas' },
+        { id: 4, text: 'A nappaliban étkező- és ülőgarnitúra' },
+        { id: 5, text: 'A nappaliban kétszemélyes kinyitható fekhely' },
+        { id: 6, text: 'Felszerelt konyha' },
+        { id: 7, text: 'Klimatizált' },
+    ],
+};
+
 export default function Pricing() {
     const [season, setSeason] = useState(1);
+    const [isRoomInfoVisible, setIsRoomInfoVisible] = useState({
+        'Szoba 2': false,
+        'Szoba 3': false,
+        'Apartman 5': false,
+        'Apartman 7': false,
+    });
     const swiperRef = useRef(null);
 
     const onSwiper = (swiper) => {
@@ -218,6 +254,7 @@ export default function Pricing() {
                             {season.places.map((place) => (
                                 <Box key={place.name}>
                                     <h2>{place.name}</h2>
+                                    <ion-icon name="information-circle-outline" onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: true })}></ion-icon>
                                     <ul>
                                         {place.prices.map((price) => (
                                             <li key={price.label}>
@@ -226,6 +263,17 @@ export default function Pricing() {
                                             </li>
                                         ))}
                                     </ul>
+                                    <RoomInfo isVisible={isRoomInfoVisible[place.name]}>
+                                        <ion-icon name="close-outline" onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: false })}></ion-icon>
+                                        <ul>
+                                            {descriptions[place.name].map((description) => (
+                                                <li key={description.id}>
+                                                    <ion-icon name="checkmark-outline"></ion-icon>
+                                                    <span>{description.text}</span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </RoomInfo>
                                 </Box>
                             ))}
 
@@ -316,8 +364,10 @@ const Box = styled.div`
     align-items: center;
     border: 1px solid var(--light-night);
     border-radius: 0.25rem;
+    position: relative;
+    overflow: hidden;
 
-    h2 {
+    >h2 {
         color: var(--night);
         font-size: 1.5rem;
         padding: 1rem 4rem;
@@ -325,7 +375,16 @@ const Box = styled.div`
         background-color: var(--light-day);
     }
 
-    ul {
+    >ion-icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        color: var(--night);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    >ul {
         width: 100%;
         list-style-type: none;
 
@@ -339,6 +398,52 @@ const Box = styled.div`
             span {
                 color: var(--light-night);
                 font-size: 1rem;
+            }
+        }
+    }
+`;
+
+const RoomInfo = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--day);
+    padding-left: 0.5rem;
+    padding-top: 2rem;
+    transition: 400ms;
+    transform: ${({ isVisible }) => isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, 100%, 0)'};
+    opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
+
+    >ion-icon {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        color: var(--night);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    >ul {
+        width: 100%;
+        list-style-type: none;
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+
+            ion-icon {
+                font-size: 1.25rem;
+                color: var(--decor);
+                min-width: 1.25rem;
+            }
+    
+            span {
+                font-size: 1rem;
+                color: var(--night);
             }
         }
     }
