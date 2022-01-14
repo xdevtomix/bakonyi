@@ -11,7 +11,7 @@ export default function Footer() {
                         <a href="#fooldal">Főoldal</a>
                     </li>
                     <li>
-                        <a href="#rolunk">Rólunk</a>
+                        <a href="#szolgaltatasaink">Szolgáltatásaink</a>
                     </li>
                     <li>
                         <a href="#araink">Áraink</a>

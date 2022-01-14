@@ -35,7 +35,7 @@ export default function Header() {
     const Links = () => (
         <>
             <Link href="#fooldal">Főoldal</Link>
-            <Link href="#rolunk">Rólunk</Link>
+            <Link href="#szolgaltatasaink">Szolgáltatásaink</Link>
             <Link href="#araink">Áraink</Link>
             <Link href="#reggeli">Reggeli</Link>
             <Link href="#latnivalok">Látnivalók</Link>

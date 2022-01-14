@@ -3,9 +3,12 @@ import styled from "styled-components";
 const data = [
     {
         id: 1,
-        icon: 'wifi-outline',
-        header: 'Wifi',
-        text: 'Telefon? Tablet? Laptop? Nem probléma: a wifi ingyenes és 24 órában a rendelkezésére áll.'
+        icon: 'fast-food-outline',
+        header: 'Reggeli',
+        text: `
+            Fogyassza el reggelijét a csak vendégeink számára fenntartott büfénkben, vagy épp a szobájában, ha úgy kényelmesebb. Felvisszük!
+            Sőt, akár el is csomaguljuk, ha magával vinné kiránduláskor, síeléskor.
+            Válasszon az étlapunkról!`
     },
     {
         id: 2,
@@ -21,18 +24,63 @@ const data = [
     },
     {
         id: 4,
-        icon: 'fast-food-outline',
-        header: 'Reggeli',
-        text: `
-            Fogyassza el reggelijét a csak vendégeink számára fenntartott büfénkben, vagy épp a szobájában, ha úgy kényelmesebb. Felvisszük!
-            Sőt, akár el is csomaguljuk, ha magával vinné kiránduláskor, síeléskor.
-            Válasszon az étlapunkról!`
+        icon: 'wifi-outline',
+        header: 'Wifi',
+        text: 'Telefon? Tablet? Laptop? Nem probléma: a wifi ingyenes és 24 órában a rendelkezésére áll.'
+    },
+    {
+        id: 5,
+        icon: 'planet-outline',
+        header: 'Műholdas tv',
+        text: 'Ha este tévézne, távirányító és műholdas csatornák várják.'
+    },
+    {
+        id: 6,
+        icon: 'beer-outline',
+        header: 'Hűtő és mikró',
+        text: 'Minden szobához és apartmanhoz hűtőszekrény és mikró is tartozik.'
+    },
+    {
+        id: 7,
+        icon: 'bed-outline',
+        header: 'Ágynemű, törölköző',
+        text: 'Törölközőt sem kell magával hoznia. Akár több méretben is biztosítunk.'
+    },
+    {
+        id: 8,
+        icon: 'card-outline',
+        header: 'SZÉP kártya',
+        text: 'A szállás díját SZÉP kártyával is rendezheti.'
+    },
+    {
+        id: 9,
+        icon: 'storefront-outline',
+        header: 'Különterem',
+        text: 'Az apartmanházban igény esetén 20 főt befogadni képes különterem bérelhető.'
+    },
+    {
+        id: 10,
+        icon: 'paw-outline',
+        header: 'Kisállat',
+        text: 'A szállásunk állatbarát. Minden amúgy is lakásban élő kisállatot szívesen látunk. Az ár: 2500 Ft / kisállat / nap.'
+    },
+    {
+        id: 11,
+        icon: 'people-outline',
+        header: 'Csoportos foglalás',
+        text: 'Csoportos foglalás esetén egyedi árak!'
+    },
+    {
+        id: 12,
+        icon: 'wallet-outline',
+        header: 'Síbérlet',
+        text: 'Szállóvendégeink részére a sípálya 10%-os kedvezményt biztosít a belépők árából.'
     },
 ];
 
-export default function About() {
+export default function Services() {
     return (
-        <Container data-component="about" id="rolunk">
+        <Container data-component="services" id="szolgaltatasaink">
 
             <Content>
                 <span>Egy pár gondolat rólunk</span>
@@ -105,6 +153,10 @@ const BoxesContainer = styled.div`
     @media(min-width: 768px) {
         grid-template-columns: 1fr 1fr;
     }
+
+    @media(min-width: 1366px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 `;
 
 const Box = styled.div`
@@ -114,12 +166,12 @@ const Box = styled.div`
     div {
         display: flex;
         align-items: center;
+        gap: 0.5rem;
         margin-bottom: 0.5rem;
 
         ion-icon {
             color: var(--decor);
             font-size: 1.5rem;
-            margin-right: 0.5rem;
         }
     
         h2 {
