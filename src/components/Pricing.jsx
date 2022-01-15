@@ -254,7 +254,9 @@ export default function Pricing() {
                             {season.places.map((place) => (
                                 <Box key={place.name}>
                                     <h2>{place.name}</h2>
-                                    <ion-icon name="information-circle-outline" onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: true })}></ion-icon>
+                                    <span onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: true })}>
+                                        <ion-icon name="information-circle-outline"></ion-icon>
+                                    </span>
                                     <ul>
                                         {place.prices.map((price) => (
                                             <li key={price.label}>
@@ -264,7 +266,9 @@ export default function Pricing() {
                                         ))}
                                     </ul>
                                     <RoomInfo isVisible={isRoomInfoVisible[place.name]}>
-                                        <ion-icon name="close-outline" onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: false })}></ion-icon>
+                                        <span onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: false })}>
+                                            <ion-icon name="close-outline"></ion-icon>
+                                        </span>
                                         <ul>
                                             {descriptions[place.name].map((description) => (
                                                 <li key={description.id}>
@@ -375,13 +379,16 @@ const Box = styled.div`
         background-color: var(--light-day);
     }
 
-    >ion-icon {
+    >span {
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;
-        color: var(--night);
-        font-size: 1.5rem;
         cursor: pointer;
+
+        >ion-icon {
+            color: var(--night);
+            font-size: 1.5rem;
+        }
     }
 
     >ul {
@@ -416,13 +423,16 @@ const RoomInfo = styled.div`
     transform: ${({ isVisible }) => isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, 100%, 0)'};
     opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
 
-    >ion-icon {
+    >span {
         position: absolute;
         top: 0.5rem;
         right: 0.5rem;
-        color: var(--night);
-        font-size: 1.5rem;
         cursor: pointer;
+
+        >ion-icon {
+            color: var(--night);
+            font-size: 1.5rem;
+        }
     }
 
     >ul {

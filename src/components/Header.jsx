@@ -51,11 +51,17 @@ export default function Header() {
                 <span>Bakonyi</span>Apartmanház
             </Logo>
 
-            {isSmallScreen && <VerticalMenu isVerticalMenuVisible={isVerticalMenuVisible} onClick={() => setIsVerticalMenuVisible(false)}>
-                <Links />
-            </VerticalMenu>}
+            {isSmallScreen && (
+                <VerticalMenu isVerticalMenuVisible={isVerticalMenuVisible} onClick={() => setIsVerticalMenuVisible(false)}>
+                    <Links />
+                </VerticalMenu>
+            )}
 
-            {isSmallScreen && <ion-icon name="menu" onClick={() => setIsVerticalMenuVisible(!isVerticalMenuVisible)}></ion-icon>}
+            {isSmallScreen && (
+                <span onClick={() => setIsVerticalMenuVisible(!isVerticalMenuVisible)}>
+                    <ion-icon name="menu"></ion-icon>
+                </span>
+            )}
 
             {!isSmallScreen && <HorizontalMenu>
                 <Links />
@@ -75,13 +81,16 @@ const Container = styled.header`
     align-items: center;
     justify-content: space-between;
     background-color: var(--day);
-    box-shadow: ${({isShadowVisible}) => isShadowVisible ? '0 0 1rem var(--light-night)' : ''};
+    box-shadow: ${({ isShadowVisible }) => isShadowVisible ? '0 0 1rem var(--light-night)' : ''};
     padding: 0 2rem;
 
-    ion-icon {
-        color: var(--night);
-        font-size: 2.5rem;
+    >span {
         cursor: pointer;
+
+        ion-icon {
+            color: var(--night);
+            font-size: 2.5rem;
+        }
     }
 `;
 
