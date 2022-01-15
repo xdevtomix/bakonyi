@@ -17,6 +17,8 @@ export default function Home() {
                 modules={[Pagination, Autoplay]}
                 pagination={{ clickable: true }}
                 autoplay={{ delay: 10 * 1000 }}
+                speed={1000}
+                spaceBetween={8}
                 loop
             >
                 <SwiperSlide>
