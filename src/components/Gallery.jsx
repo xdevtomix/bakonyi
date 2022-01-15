@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Pagination, Autoplay } from 'swiper';
+import { Pagination, Autoplay, FreeMode } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import szoba2_1_m from '../images/szoba2_1_m.jpg';
@@ -26,6 +26,7 @@ import epleny_1_m from '../images/epleny_1_m.jpg';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
 
 const images = [
     { id: 'szoba2_1_m', which: 'Szoba 2', what: 'Ágy', imageUrl: szoba2_1_m },
@@ -63,10 +64,11 @@ export default function Gallery() {
 
             <SwiperContainer>
                 <Swiper
-                    modules={[Pagination, Autoplay]}
+                    modules={[Pagination, Autoplay, FreeMode]}
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 20 * 1000 }}
                     /* loop */
+                    freeMode={true}
                     speed={600}
                     spaceBetween={20}
                     breakpoints={{
