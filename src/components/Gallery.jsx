@@ -3,60 +3,52 @@ import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import szoba2_1_m from '../images/szoba2_1_m.jpg';
-import szoba2_1_i from '../images/szoba2_1_i.jpg';
 import szoba2_2_m from '../images/szoba2_2_m.jpg';
-import szoba2_2_i from '../images/szoba2_2_i.jpg';
 
 import szoba3_1_m from '../images/szoba3_1_m.jpg';
-import szoba3_1_i from '../images/szoba3_1_i.jpg';
 
 /* apartman5 helye */
 
 import apartman7_1_m from '../images/apartman7_1_m.jpg';
-import apartman7_1_i from '../images/apartman7_1_i.jpg';
 
 import bufe_1_m from '../images/bufe_1_m.jpg';
-import bufe_1_i from '../images/bufe_1_i.jpg';
+import bufe_2_m from '../images/bufe_2_m.jpg';
+import bufe_3_m from '../images/bufe_3_m.jpg';
 
 import udvar_1_m from '../images/udvar_1_m.jpg';
-import udvar_1_i from '../images/udvar_1_i.jpg';
 import udvar_2_m from '../images/udvar_2_m.jpg';
-import udvar_2_i from '../images/udvar_2_i.jpg';
 import udvar_3_m from '../images/udvar_3_m.jpg';
-import udvar_3_i from '../images/udvar_3_i.jpg';
 import udvar_4_m from '../images/udvar_4_m.jpg';
-import udvar_4_i from '../images/udvar_4_i.jpg';
 import udvar_teli_1_m from '../images/udvar_teli_1_m.jpg';
-import udvar_teli_1_i from '../images/udvar_teli_1_i.jpg';
 import udvar_teli_2_m from '../images/udvar_teli_2_m.jpg';
-import udvar_teli_2_i from '../images/udvar_teli_2_i.jpg';
 
 import epleny_1_m from '../images/epleny_1_m.jpg';
-import epleny_1_i from '../images/epleny_1_i.jpg';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 const images = [
-    { id: 1, which: 'Szoba 2', what: 'Ágy', smallImageUrl: szoba2_1_m, bigImageUrl: szoba2_1_i, },
-    { id: 2, which: 'Szoba 2', what: 'Belső tér', smallImageUrl: szoba2_2_m, bigImageUrl: szoba2_2_i, },
+    { id: 'szoba2_1_m', which: 'Szoba 2', what: 'Ágy', imageUrl: szoba2_1_m },
+    { id: 'szoba2_2_m', which: 'Szoba 2', what: 'Belső tér', imageUrl: szoba2_2_m },
 
-    { id: 3, which: 'Szoba 3', what: 'Belső tér', smallImageUrl: szoba3_1_m, bigImageUrl: szoba3_1_i, },
+    { id: 'szoba3_1_m', which: 'Szoba 3', what: 'Belső tér', imageUrl: szoba3_1_m },
 
     /* apartman5 helye */
 
-    { id: 4, which: 'Apartman 7', what: 'Konyha', smallImageUrl: apartman7_1_m, bigImageUrl: apartman7_1_i, },
+    { id: 'apartman7_1_m', which: 'Apartman 7', what: 'Konyha', imageUrl: apartman7_1_m },
 
-    { id: 5, which: 'Büfé', what: 'Belső tér', smallImageUrl: bufe_1_m, bigImageUrl: bufe_1_i, },
+    { id: 'bufe_1_m', which: 'Büfé', what: 'Belső tér', imageUrl: bufe_1_m },
+    { id: 'bufe_2_m', which: 'Büfé', what: 'Belső tér', imageUrl: bufe_2_m },
+    { id: 'bufe_3_m', which: 'Büfé', what: 'Gyereksarok', imageUrl: bufe_3_m },
 
-    { id: 6, which: 'Udvar', what: 'Kisház', smallImageUrl: udvar_1_m, bigImageUrl: udvar_1_i, },
-    { id: 7, which: 'Udvar', what: 'Pihenő', smallImageUrl: udvar_2_m, bigImageUrl: udvar_2_i, },
-    { id: 8, which: 'Udvar', what: 'Bejárat', smallImageUrl: udvar_3_m, bigImageUrl: udvar_2_i, },
-    { id: 9, which: 'Udvar', what: 'Büfé bejárat', smallImageUrl: udvar_4_m, bigImageUrl: udvar_4_i, },
-    { id: 10, which: 'Udvar', what: 'Bejárat télen', smallImageUrl: udvar_teli_1_m, bigImageUrl: udvar_teli_1_i, },
-    { id: 11, which: 'Udvar', what: 'Télen távolabbról', smallImageUrl: udvar_teli_2_m, bigImageUrl: udvar_teli_2_i, },
+    { id: 'udvar_1_m', which: 'Udvar', what: 'Kisház', imageUrl: udvar_1_m },
+    { id: 'udvar_2_m', which: 'Udvar', what: 'Pihenő', imageUrl: udvar_2_m },
+    { id: 'udvar_3_m', which: 'Udvar', what: 'Bejárat', imageUrl: udvar_3_m },
+    { id: 'udvar_4_m', which: 'Udvar', what: 'Büfé bejárat', imageUrl: udvar_4_m },
+    { id: 'udvar_teli_1_m', which: 'Udvar', what: 'Bejárat télen', imageUrl: udvar_teli_1_m },
+    { id: 'udvar_teli_2_m', which: 'Udvar', what: 'Télen távolabbról', imageUrl: udvar_teli_2_m },
 
-    { id: 12, which: 'Eplény', what: 'Templomtorony', smallImageUrl: epleny_1_m, bigImageUrl: epleny_1_i, },
+    { id: 'epleny_1_m', which: 'Eplény', what: 'Templomtorony', imageUrl: epleny_1_m },
 ];
 
 export default function Gallery() {
@@ -73,23 +65,24 @@ export default function Gallery() {
                 <Swiper
                     modules={[Pagination, Autoplay]}
                     pagination={{ clickable: true }}
-                    /* autoplay={{ delay: 60 * 1000 }} */
+                    autoplay={{ delay: 20 * 1000 }}
                     /* loop */
+                    speed={600}
                     spaceBetween={20}
                     breakpoints={{
                         768: {
                             slidesPerView: 2,
                         },
                         1024: {
-                            slidesPerView: 4,
+                            slidesPerView: 3,
                         }
                     }}
                 >
                     {
-                        images.map(({ id, which, what, smallImageUrl, bigImageUrl }) => (
+                        images.map(({ id, which, what, imageUrl }) => (
                             <SwiperSlide key={id}>
                                 <SlideItem>
-                                    <img src={smallImageUrl} alt={`${which} - ${what}`} loading="lazy" />
+                                    <img src={imageUrl} alt={`${which} - ${what}`} loading="lazy" />
                                     <h2>{which}</h2>
                                     <p>{what}</p>
                                 </SlideItem>
