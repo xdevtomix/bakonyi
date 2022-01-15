@@ -15,7 +15,7 @@ export default function Introduction() {
 
             <p>
                 A sportpálya, játszótér, kondipark és szabadtéri bográcsozó 100 méterre,
-                a hétüléses felvonó 600-700 méterre,
+                a négyüléses felvonó 600-700 méterre,
                 a síközpont 2500 méterre van.
             </p>
 

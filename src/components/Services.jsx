@@ -74,7 +74,7 @@ const data = [
         id: 12,
         icon: 'wallet-outline',
         header: 'Síbérlet',
-        text: 'Szállóvendégeink részére a sípálya 10%-os kedvezményt biztosít a belépők árából.'
+        text: 'Szállóvendégeink részére a sípálya 10%-os kedvezményt biztosít a bérletek árából.'
     },
 ];
 
@@ -85,7 +85,7 @@ export default function Services() {
             <Content>
                 <span>Egy pár gondolat rólunk</span>
                 <h2>Arra törekszünk, hogy Ön jól érezze magát</h2>
-                <p>Íme néhány a szolgáltatásink listájából:</p>
+                <p>Íme néhány a szolgáltatásaink listájából:</p>
 
                 <BoxesContainer>
                     {data.map((item) => (
