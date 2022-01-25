@@ -6,6 +6,8 @@ import szoba2_1_m from '../images/szoba2_1_m.jpg';
 import szoba2_2_m from '../images/szoba2_2_m.jpg';
 
 import szoba3_1_m from '../images/szoba3_1_m.jpg';
+import szoba3_2_m from '../images/szoba3_2_m.jpg';
+import szoba3_3_m from '../images/szoba3_3_m.jpg';
 
 /* apartman5 helye */
 
@@ -32,6 +34,8 @@ const images = [
     { id: 'szoba2_2_m', which: 'Szoba 2', what: 'Belső tér', imageUrl: szoba2_2_m },
 
     { id: 'szoba3_1_m', which: 'Szoba 3', what: 'Belső tér', imageUrl: szoba3_1_m },
+    { id: 'szoba3_2_m', which: 'Szoba 3', what: 'Ágyak', imageUrl: szoba3_2_m },
+    { id: 'szoba3_3_m', which: 'Szoba 3', what: 'Szekrénysor', imageUrl: szoba3_3_m },
 
     /* apartman5 helye */
 
