@@ -4,13 +4,16 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import szoba2_1_m from '../images/szoba2_1_m.jpg';
 import szoba2_2_m from '../images/szoba2_2_m.jpg';
+import szoba2_3_m from '../images/szoba2_3_m.jpg';
 
 import szoba3_1_m from '../images/szoba3_1_m.jpg';
 import szoba3_2_m from '../images/szoba3_2_m.jpg';
 import szoba3_3_m from '../images/szoba3_3_m.jpg';
 import szoba3_4_m from '../images/szoba3_4_m.jpg';
 
-/* apartman5 helye */
+import apartman5_1_m from '../images/apartman5_1_m.jpg';
+import apartman5_2_m from '../images/apartman5_2_m.jpg';
+import apartman5_3_m from '../images/apartman5_3_m.jpg';
 
 import apartman7_1_m from '../images/apartman7_1_m.jpg';
 
@@ -33,13 +36,16 @@ import 'swiper/css/pagination';
 const images = [
     { id: 'szoba2_1_m', which: 'Szoba 2', what: 'Ágy', imageUrl: szoba2_1_m },
     { id: 'szoba2_2_m', which: 'Szoba 2', what: 'Belső tér', imageUrl: szoba2_2_m },
+    { id: 'szoba2_3_m', which: 'Szoba 2', what: 'Étkező', imageUrl: szoba2_3_m },
 
     { id: 'szoba3_1_m', which: 'Szoba 3', what: 'Belső tér', imageUrl: szoba3_1_m },
     { id: 'szoba3_2_m', which: 'Szoba 3', what: 'Ágyak', imageUrl: szoba3_2_m },
     { id: 'szoba3_3_m', which: 'Szoba 3', what: 'Szekrénysor', imageUrl: szoba3_3_m },
     { id: 'szoba3_4_m', which: 'Szoba 3', what: 'Fürdőszoba', imageUrl: szoba3_4_m },
 
-    /* apartman5 helye */
+    { id: 'apartman5_1_m', which: 'Apartman 5', what: 'Konyha', imageUrl: apartman5_1_m },
+    { id: 'apartman5_2_m', which: 'Apartman 5', what: 'Nappali', imageUrl: apartman5_2_m },
+    { id: 'apartman5_3_m', which: 'Apartman 5', what: 'Szoba', imageUrl: apartman5_3_m },
 
     { id: 'apartman7_1_m', which: 'Apartman 7', what: 'Konyha', imageUrl: apartman7_1_m },
 
