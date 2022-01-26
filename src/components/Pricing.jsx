@@ -188,7 +188,8 @@ const descriptions = {
     'Szoba 3': [
         { id: 1, text: 'Két férőhelyes' },
         { id: 2, text: 'Plusz felnőtt méretű pótágy' },
-        { id: 3, text: 'Klimatizált' },
+        { id: 3, text: 'Fürdőszobával' },
+        { id: 4, text: 'Klimatizált' },
     ],
     'Apartman 5': [
         { id: 1, text: '32nm' },
