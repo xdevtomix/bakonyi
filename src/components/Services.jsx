@@ -15,7 +15,7 @@ const data = [
         id: 2,
         icon: 'pizza-outline',
         header: 'Ebéd, vacsora',
-        text: 'Szállóvendégeink részére az eplényi 82-es Kisvendéglő 10%-os kedvezményt biztosít az ételek árából.'
+        text: 'Szállóvendégeink részére az eplényi 82-es Kisvendéglő 10%-os kedvezményt kínál az ételek árából.'
     },
     {
         id: 3,

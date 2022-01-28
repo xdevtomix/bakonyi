@@ -68,6 +68,11 @@ export default function Footer() {
                             siarena.hu
                         </a>
                     </li>
+                    <li>
+                        <a href="#szolgaltatasaink">
+                            82-es Kisvendéglő Eplény
+                        </a>
+                    </li>
                 </ul>
             </div>
 
