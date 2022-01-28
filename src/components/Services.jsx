@@ -8,19 +8,23 @@ const data = [
         text: `
             Fogyassza el reggelijét a csak vendégeink számára fenntartott büfénkben, vagy épp a szobájában, ha úgy kényelmesebb. Felvisszük!
             Sőt, akár el is csomaguljuk, ha magával vinné kiránduláskor, síeléskor.
-            Válasszon az étlapunkról!`
+            Válasszon az étlapunkról!
+        `
     },
     {
         id: 2,
-        icon: 'car-outline',
-        header: 'Belső parkoló',
-        text: 'Zárt parkolót biztosítunk, hogy nyugodt lehessen: az autójával éjjel is minden rendben lesz.'
+        icon: 'pizza-outline',
+        header: 'Ebéd, vacsora',
+        text: 'Szállóvendégeink részére az eplényi 82-es Kisvendéglő 10%-os kedvezményt biztosít az ételek árából.'
     },
     {
         id: 3,
         icon: 'car-sport-outline',
-        header: 'Külső parkoló',
-        text: 'Ha a benti parkoló megtelt, vagy éppen nem szeretne beállni, a ház melletti ingyenes parkolóban hagyhatja autóját.'
+        header: 'Belső és külső parkoló',
+        text: `
+            Zárt parkolót biztosítunk, hogy nyugodt lehessen: az autójával éjjel is minden rendben lesz. 
+            Ha a benti parkoló megtelt, vagy éppen nem szeretne beállni, a ház melletti ingyenes parkolóban hagyhatja autóját.
+        `
     },
     {
         id: 4,
