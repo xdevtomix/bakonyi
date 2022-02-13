@@ -3,27 +3,16 @@ import styled from "styled-components";
 
 export default function Breakfast() {
     const [dishes, setDishes] = useState([]);
-    const [dishId, setDishId] = useState({ value: 1 });
+    const [dishId, setDishId] = useState({ value: -1 });
+    const [selectedDish, setSelectedDish] = useState({ id: '', name: '', price: '', src: '' });
     const [showImage, setShowImage] = useState(false);
 
     const maxId = 16;
     const intervalTime = 10 * 1000;
     const fadeTime = 2 * 1000;
 
-    const getSelectedDish = () => {
-        const selectedDish = dishes.find((dish) => +dish.id === dishId.value);
-        const dishToReturn = { name: '', price: '', src: '', };
-
-        if (selectedDish) {
-            dishToReturn.name = selectedDish.hu;
-            dishToReturn.price = selectedDish.price;
-
-            if (selectedDish.url && (selectedDish.url.endsWith('.jpeg') || selectedDish.url.endsWith('.jpg'))) {
-                dishToReturn.src = `https://raw.githubusercontent.com/xdevtomix/mokus/main/public${selectedDish.url.substring(1)}`;
-            }
-        }
-
-        return dishToReturn;
+    const generateRandomDishId = () => {
+        setDishId({ value: Math.floor(Math.random() * maxId) + 1 });
     };
 
     useEffect(() => {
@@ -31,31 +20,49 @@ export default function Breakfast() {
             const response = await fetch('https://raw.githubusercontent.com/xdevtomix/mokus/main/src/assets/translations.json');
             const json = await response.json();
 
-            setDishes(json.dishes.filter((item) => item.role === 'dish'));
+            let dishes = json.dishes;
+
+            dishes = dishes.filter((item) => item.role === 'dish');
+            dishes = dishes.filter((dish) => +dish.id <= maxId);
+            dishes = dishes.map((dish) => {
+                const mappedDish = { id: '', name: '', price: '', src: '' };
+
+                mappedDish.id = dish.id;
+                mappedDish.name = dish.hu;
+                mappedDish.price = dish.price;
+
+                if (dish.url.endsWith('.jpeg') || dish.url.endsWith('.jpg')) {
+                    mappedDish.src = `https://raw.githubusercontent.com/xdevtomix/mokus/main/public${dish.url.substring(1)}`;
+                }
+
+                return mappedDish;
+            });
+
+            setDishes(dishes);
         };
+
         fetchData();
     }, []);
 
     useEffect(() => {
-        const generateRandomDishId = () => {
-            setDishId({ value: Math.floor(Math.random() * maxId) + 1 });
-        };
-
-        let intervalId = setInterval(() => {
+        if (dishes.length > 0) {
             generateRandomDishId();
-        }, intervalTime);
-
-        generateRandomDishId();
-
-        return () => {
-            clearInterval(intervalId);
-        };
-    }, []);
+        }
+    }, [dishes]);
 
     useEffect(() => {
-        setShowImage(true);
-        setTimeout(() => setShowImage(false), intervalTime - fadeTime);
+        if (dishId.value > -1) {
+            setSelectedDish({ ...dishes.find((dish) => +dish.id === dishId.value) });
+        }
     }, [dishId]);
+
+    useEffect(() => {
+        if (selectedDish.name) {
+            setShowImage(true);
+            setTimeout(() => setShowImage(false), intervalTime - fadeTime);
+            setTimeout(() => generateRandomDishId(), intervalTime);
+        }
+    }, [selectedDish]);
 
     return (
         <Container data-component="breakfast" id="reggeli">
@@ -71,10 +78,18 @@ export default function Breakfast() {
 
             <ImageContainer showImage={showImage} fadeTime={fadeTime}>
                 <div>
-                    <span>{getSelectedDish().name}</span> <span>{getSelectedDish().price}</span>
+                    <span>{selectedDish.name}</span> <span>{selectedDish.price}</span>
                 </div>
-                {getSelectedDish().src && <img src={getSelectedDish().src} alt={getSelectedDish().name} loading="lazy" />}
-                {!getSelectedDish().src && <ion-icon name="fast-food-outline"></ion-icon>}
+
+                {selectedDish.src && <img src={selectedDish.src} alt={selectedDish.name} loading="lazy" />}
+
+                <PreloadedImagesList>
+                    {dishes.map((dish) => (
+                        <li>
+                            <img src={dish.src} alt={dish.name} loading="lazy" key={dish.id} />
+                        </li>
+                    ))}
+                </PreloadedImagesList>
             </ImageContainer>
         </Container>
     );
@@ -188,5 +203,20 @@ const ImageContainer = styled.div`
     ion-icon {
         font-size: 12rem;
         color: var(--light-night);
+    }
+`;
+
+const PreloadedImagesList = styled.ul`
+    height: 1px;
+    opacity: 0;
+
+    >li {
+        height: 100%;
+        
+        >img {
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
     }
 `;
