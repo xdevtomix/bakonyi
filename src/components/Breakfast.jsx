@@ -85,8 +85,8 @@ export default function Breakfast() {
 
                 <PreloadedImagesList>
                     {dishes.map((dish) => (
-                        <li>
-                            <img src={dish.src} alt={dish.name} loading="lazy" key={dish.id} />
+                        <li key={dish.id}>
+                            <img src={dish.src} alt={dish.name} loading="lazy" />
                         </li>
                     ))}
                 </PreloadedImagesList>
