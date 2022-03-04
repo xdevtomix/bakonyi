@@ -16,6 +16,9 @@ import apartman5_2_m from '../images/apartman5_2_m.jpg';
 import apartman5_3_m from '../images/apartman5_3_m.jpg';
 
 import apartman7_1_m from '../images/apartman7_1_m.jpg';
+import apartman7_2_m from '../images/apartman7_2_m.jpg';
+import apartman7_3_m from '../images/apartman7_3_m.jpg';
+import apartman7_4_m from '../images/apartman7_4_m.jpg';
 
 import bufe_1_m from '../images/bufe_1_m.jpg';
 import bufe_2_m from '../images/bufe_2_m.jpg';
@@ -47,7 +50,10 @@ const images = [
     { id: 'apartman5_2_m', which: 'Apartman 5', what: 'Nappali', imageUrl: apartman5_2_m },
     { id: 'apartman5_3_m', which: 'Apartman 5', what: 'Szoba', imageUrl: apartman5_3_m },
 
-    { id: 'apartman7_1_m', which: 'Apartman 7', what: 'Konyha', imageUrl: apartman7_1_m },
+    { id: 'apartman7_1_m', which: 'Apartman 7', what: 'Nappali', imageUrl: apartman7_1_m },
+    { id: 'apartman7_2_m', which: 'Apartman 7', what: 'Két ágyas szoba', imageUrl: apartman7_2_m },
+    { id: 'apartman7_3_m', which: 'Apartman 7', what: 'Fürdőszoba', imageUrl: apartman7_3_m },
+    { id: 'apartman7_4_m', which: 'Apartman 7', what: 'Három ágyas szoba', imageUrl: apartman7_4_m },
 
     { id: 'bufe_1_m', which: 'Büfé', what: 'Belső tér', imageUrl: bufe_1_m },
     { id: 'bufe_2_m', which: 'Büfé', what: 'Belső tér', imageUrl: bufe_2_m },
