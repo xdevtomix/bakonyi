@@ -85,7 +85,7 @@ export default function Gallery() {
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 20 * 1000 }}
                     /* loop */
-                    speed={600}
+                    speed={300}
                     spaceBetween={20}
                     breakpoints={{
                         768: {
