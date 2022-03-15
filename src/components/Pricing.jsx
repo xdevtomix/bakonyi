@@ -7,7 +7,7 @@ import 'swiper/css';
 const seasons = [
     {
         id: 1,
-        duration: '2021.12.20 - 2022.02.28',
+        duration: '2022.12.20 - 2023.02.28',
         places: [
             {
                 name: 'Szoba 2',
@@ -211,7 +211,7 @@ const descriptions = {
 };
 
 export default function Pricing() {
-    const [season, setSeason] = useState(1);
+    const [season, setSeason] = useState(2);
     const [isRoomInfoVisible, setIsRoomInfoVisible] = useState({
         'Szoba 2': false,
         'Szoba 3': false,
