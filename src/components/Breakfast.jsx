@@ -7,7 +7,7 @@ export default function Breakfast() {
     const [selectedDish, setSelectedDish] = useState({ id: '', name: '', price: '', src: '' });
     const [showImage, setShowImage] = useState(false);
 
-    const maxId = 16;
+    const maxId = 14;
     const intervalTime = 10 * 1000;
     const fadeTime = 2 * 1000;
 
