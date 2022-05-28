@@ -38,6 +38,14 @@ const testimonials = [
         `,
         name: 'Lívia'
     },
+    {
+        id: 5,
+        text: `
+            Ritka az ilyen szállás: jó a wifi, tiszta a szoba, szép az apartman!
+            Eplény és Bakonyi Apartmanház - jövőre találkozunk!
+        `,
+        name: 'Tibor'
+    },
 ];
 
 export default function Testimonials() {
@@ -60,9 +68,9 @@ export default function Testimonials() {
                     modules={[Pagination, Autoplay]}
                     pagination={{ clickable: true }}
                     autoplay={{ delay: 10 * 1000 }}
-                    loop
+                    /* loop */
                     breakpoints={{
-                        768 : {
+                        768: {
                             slidesPerView: 2,
                             spaceBetween: 20
                         },
