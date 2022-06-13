@@ -36,6 +36,7 @@ import udvar_7_m from '../images/udvar_7_m.jpg';
 import udvar_8_m from '../images/udvar_8_m.jpg';
 import udvar_9_m from '../images/udvar_9_m.jpg';
 import udvar_10_m from '../images/udvar_10_m.jpg';
+import udvar_11_m from '../images/udvar_11_m.jpg';
 import udvar_teli_1_m from '../images/udvar_teli_1_m.jpg';
 import udvar_teli_2_m from '../images/udvar_teli_2_m.jpg';
 
@@ -79,6 +80,7 @@ const images = [
     { id: 'udvar_8_m', which: 'Udvar', what: 'Parkoló', imageUrl: udvar_8_m },
     { id: 'udvar_9_m', which: 'Udvar', what: 'Kisház belül', imageUrl: udvar_9_m },
     { id: 'udvar_10_m', which: 'Udvar', what: 'Kisház belül', imageUrl: udvar_10_m },
+    { id: 'udvar_11_m', which: 'Udvar', what: 'Hintaágy', imageUrl: udvar_11_m },
     { id: 'udvar_teli_1_m', which: 'Udvar', what: 'Bejárat télen', imageUrl: udvar_teli_1_m },
     { id: 'udvar_teli_2_m', which: 'Udvar', what: 'Télen távolabbról', imageUrl: udvar_teli_2_m },
 
