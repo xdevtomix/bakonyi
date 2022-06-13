@@ -16,17 +16,17 @@ export default function Introduction() {
             <p>
                 A sportpálya, játszótér, kondipark és szabadtéri bográcsozó 100 méterre,
                 a kétüléses felvonó 600-700 méterre,
-                a síközpont és a libegő 2500 méterre található.
+                a síközpont és a libegő 2500 méterre van.
             </p>
 
             <p>
-                Étkezési lehetőség, boltok, az Ámos-hegyi kilátó és a Kalandhegy mind a közelben vannak.
+                Étkezési lehetőség, boltok, az Ámos-hegyi kilátó és a Kalandhegy mind percek alatt elérhetőek.
             </p>
 
             <p>
                 A legközelebbi város - Zirc - csak 5km,
                 Veszprém 15km,
-                de a Balaton is csak 30 perc autóval.
+                de a Balaton is csak fél óra autóval.
             </p>
 
             <h2>
