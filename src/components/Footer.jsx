@@ -17,9 +17,6 @@ export default function Footer() {
                         <a href="#araink">Áraink</a>
                     </li>
                     <li>
-                        <a href="#reggeli">Reggeli</a>
-                    </li>
-                    <li>
                         <a href="#latnivalok">Látnivalók</a>
                     </li>
                     <li>
