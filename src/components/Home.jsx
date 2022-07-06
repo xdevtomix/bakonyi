@@ -43,8 +43,8 @@ export default function Home() {
                             <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
                         </picture> */}
                         <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
-                        <span>Pihenjen és azután...</span>
-                        <h2>...induljon a nap egy finom reggelivel</h2>
+                        <span>Pihenjen...</span>
+                        <h2>...és azután induljon a nap</h2>
                         <a href="#kapcsolat">Hívjon</a>
                     </SlideItem>
                 </SwiperSlide>
