@@ -37,7 +37,6 @@ export default function Header() {
             <Link href="#fooldal">Főoldal</Link>
             <Link href="#szolgaltatasaink">Szolgáltatásaink</Link>
             <Link href="#araink">Áraink</Link>
-            <Link href="#reggeli">Reggeli</Link>
             <Link href="#latnivalok">Látnivalók</Link>
             <Link href="#velemenyek">Vélemények</Link>
             <Link href="#galeria">Galéria</Link>
