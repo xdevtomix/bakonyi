@@ -6,9 +6,7 @@ const data = [
         icon: 'fast-food-outline',
         header: 'Reggeli',
         text: `
-            Fogyassza el reggelijét a csak vendégeink számára fenntartott büfénkben, vagy épp a szobájában, ha úgy kényelmesebb. Felvisszük!
-            Sőt, akár el is csomaguljuk, ha magával vinné kiránduláskor, síeléskor.
-            Válasszon az étlapunkról!
+            Szerezze be a reggelihez valót a szállás melletti kisboltban, vagy Eplény új, vasárnap is nyitvatartó üzletében!
         `
     },
     {
