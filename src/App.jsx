@@ -5,7 +5,7 @@ import Home from "./components/Home";
 import Introduction from "./components/Introduction";
 import Services from "./components/Services";
 import Pricing from "./components/Pricing";
-import Breakfast from "./components/Breakfast";
+/* import Breakfast from "./components/Breakfast"; */
 import Programs from "./components/Programs";
 import Testimonials from "./components/Testimonials";
 import Gallery from "./components/Gallery";
@@ -20,7 +20,7 @@ export default function App() {
         <Introduction />
         <Services />
         <Pricing />
-        <Breakfast />
+        {/* <Breakfast /> */}
         <Programs />
         <Testimonials />
         <Gallery />
