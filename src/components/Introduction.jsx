@@ -33,9 +33,15 @@ export default function Introduction() {
                 Várjuk Önöket!
             </h2>
 
-            <span>
+            <p>
                 Segítünk ajánlatainkkal felfedezni a környék szépségeit, a táj adta lehetőségeket!
-            </span>
+            </p>
+            
+            <br />
+
+            <a href="https://bakonyi-apartmanhaz.business.site" target="_blank" rel="noopener">
+                Google útvonaltervező
+            </a>
         </Container>
     );
 }
@@ -56,7 +62,13 @@ const Container = styled.section`
         margin-bottom: 1rem;
     }
 
-    span {
+    a {
+        background: var(--decor);
+        color: var(--day);
         font-size: 1rem;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
     }
 `;
