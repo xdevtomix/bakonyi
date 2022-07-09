@@ -35,19 +35,30 @@ export default function Footer() {
                 <h2>Elérhetőségeink</h2>
                 <ul>
                     <li>
-                        <ion-icon name="call"></ion-icon><span>+36 88 453 122</span>
+                        <ion-icon name="call"></ion-icon>
+                        <a href="tel:+36-88-453-122">
+                            <span>+36 88 453 122</span>
+                        </a>
                     </li>
                     <li>
-                        <ion-icon name="call"></ion-icon><span>+36 70 31 22 091</span>
+                        <ion-icon name="call"></ion-icon>
+                        <a href="tel:+36-70-31-22-091">
+                            <span>+36 70 31 22 091</span>
+                        </a>
                     </li>
                     <li>
-                        <ion-icon name="mail"></ion-icon><span>dreissiger@gmail.com</span>
+                        <ion-icon name="mail"></ion-icon>
+                        <a href="mailto:dreissiger@gmail.com">
+                            <span>dreissiger@gmail.com</span>
+                        </a>
                     </li>
                     <li>
-                        <ion-icon name="location"></ion-icon><span>8413 Eplény Veszprémi utca 41</span>
+                        <ion-icon name="location"></ion-icon>
+                        <span>8413 Eplény Veszprémi utca 41</span>
                     </li>
                     <li>
-                        <ion-icon name="podium"></ion-icon><span>NTAK: MA19006009</span>
+                        <ion-icon name="podium"></ion-icon>
+                        <span>NTAK: MA19006009</span>
                     </li>
                 </ul>
             </div>
