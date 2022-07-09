@@ -140,6 +140,7 @@ const Content = styled.div`
         background: var(--decor);
         color: var(--day);
         font-size: 1rem;
+        letter-spacing: 0.1rem;
         text-decoration: none;
         cursor: pointer;
         padding: 0.5rem 1rem;

@@ -72,6 +72,7 @@ const Container = styled.section`
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
         font-size: 1rem;
+        letter-spacing: 0.1rem;
         text-decoration: none;
         display: flex;
         align-items: center;
