@@ -36,14 +36,14 @@ export default function Footer() {
                 <ul>
                     <li>
                         <ion-icon name="call"></ion-icon>
-                        <a href="tel:+36-88-453-122">
-                            <span>+36 88 453 122</span>
+                        <a href="tel:+36-70-31-22-091">
+                            <span>+36 70 31 22 091</span>
                         </a>
                     </li>
                     <li>
                         <ion-icon name="call"></ion-icon>
-                        <a href="tel:+36-70-31-22-091">
-                            <span>+36 70 31 22 091</span>
+                        <a href="tel:+36-88-453-122">
+                            <span>+36 88 453 122</span>
                         </a>
                     </li>
                     <li>

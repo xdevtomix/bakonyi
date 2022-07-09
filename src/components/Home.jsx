@@ -31,7 +31,7 @@ export default function Home() {
                         <img src={bakonyiKulso1} alt="bakonyiapartmanház" />
                         <span>Jöjjön el...</span>
                         <h2>...érezze otthon magát nálunk</h2>
-                        <a href="#kapcsolat">Írjon</a>
+                        <a href="mailto:dreissiger@gmail.com">Írjon</a>
                     </SlideItem>
                 </SwiperSlide>
 
@@ -45,7 +45,7 @@ export default function Home() {
                         <img src={bakonyiKulso2} alt="bakonyiapartmanház" loading="lazy" />
                         <span>Pihenjen...</span>
                         <h2>...és azután induljon a nap</h2>
-                        <a href="#kapcsolat">Hívjon</a>
+                        <a href="tel:+36-70-31-22-091">Hívjon</a>
                     </SlideItem>
                 </SwiperSlide>
             </Swiper>
