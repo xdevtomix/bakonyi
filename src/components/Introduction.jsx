@@ -36,10 +36,11 @@ export default function Introduction() {
             <p>
                 Segítünk ajánlatainkkal felfedezni a környék szépségeit, a táj adta lehetőségeket!
             </p>
-            
+
             <br />
 
             <a href="https://bakonyi-apartmanhaz.business.site" target="_blank" rel="noopener">
+                <ion-icon name="log-in-outline"></ion-icon>
                 Google útvonaltervező
             </a>
         </Container>
@@ -51,6 +52,9 @@ const Container = styled.section`
     padding: 0 1rem;
     text-align: center;
     color: var(--night);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     h2 {
         font-size: 1.5rem;
@@ -65,10 +69,16 @@ const Container = styled.section`
     a {
         background: var(--decor);
         color: var(--day);
-        font-size: 1rem;
-        text-decoration: none;
-        cursor: pointer;
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
+        font-size: 1rem;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        ion-icon {
+            font-size: 1.25rem;
+        }
     }
 `;
