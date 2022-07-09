@@ -81,6 +81,11 @@ export default function Footer() {
                             82-es Kisvendéglő Eplény
                         </a>
                     </li>
+                    <li>
+                        <a href="https://bakonyi-apartmanhaz.business.site" target="_blank" rel="noopener">
+                            Google útvonaltervező
+                        </a>
+                    </li>
                 </ul>
             </div>
 
