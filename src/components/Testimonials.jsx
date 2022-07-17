@@ -46,6 +46,21 @@ const testimonials = [
         `,
         name: 'Tibor'
     },
+    {
+        id: 6,
+        text: `
+            Tiszta, kényelmes szállás. Barátságos, figyelmes vendégfogadás.
+        `,
+        name: 'Gyöngyi'
+    },
+    {
+        id: 7,
+        text: `
+            Nagyon sok helyen jártam már, de itt találkoztam a legeslegkedvesebb vendéglátókkal mind közül!
+            Emellett a szoba tiszta volt, jól felszerelt és az egész hely rendkívül hagulatos. 
+        `,
+        name: 'Anita'
+    },
 ];
 
 export default function Testimonials() {
@@ -67,7 +82,7 @@ export default function Testimonials() {
                 <Swiper
                     modules={[Pagination, Autoplay]}
                     pagination={{ clickable: true }}
-                    autoplay={{ delay: 10 * 1000 }}
+                    autoplay={{ delay: 20 * 1000 }}
                     /* loop */
                     breakpoints={{
                         768: {
