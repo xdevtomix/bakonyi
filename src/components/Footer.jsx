@@ -54,7 +54,9 @@ export default function Footer() {
                     </li>
                     <li>
                         <ion-icon name="location"></ion-icon>
-                        <span>8413 Eplény Veszprémi utca 41</span>
+                        <a href="https://bakonyi-apartmanhaz.business.site" target="_blank" rel="noopener">
+                            <span>8413 Eplény Veszprémi utca 41</span>
+                        </a>
                     </li>
                     <li>
                         <ion-icon name="podium"></ion-icon>

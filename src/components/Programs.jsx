@@ -98,7 +98,7 @@ export default function Programs() {
                                     <h2>{header}</h2>
                                     <p>{text}</p>
                                     <a href={href} target="_blank" rel="noopener">
-                                        <ion-icon name="log-in-outline"></ion-icon>
+                                        <ion-icon name="log-out-outline"></ion-icon>
                                         <span>Bővebben</span>
                                     </a>
                                 </SlideItem>
