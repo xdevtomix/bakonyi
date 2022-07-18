@@ -1,15 +1,10 @@
 import styled from "styled-components";
-import { Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import bakonyiLatnivalo1 from '../images/bakonyi_latnivalo_1.jpeg';
 import bakonyiLatnivalo2 from '../images/bakonyi_latnivalo_2.jpeg';
 import bakonyiLatnivalo3 from '../images/bakonyi_latnivalo_3.jpeg';
 import bakonyiLatnivalo4 from '../images/bakonyi_latnivalo_4.jpeg';
 import bakonyiLatnivalo5 from '../images/bakonyi_latnivalo_5.jpeg';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 const programs = [
     {
@@ -69,45 +64,28 @@ export default function Programs() {
                 <div></div>
             </Title>
 
-            <SwiperContainer>
-                <Swiper
-                    modules={[Pagination, Autoplay]}
-                    pagination={{ clickable: true }}
-                    /* autoplay={{ delay: 60 * 1000 }}
-                    loop */
-                    spaceBetween={20}
-                    breakpoints={{
-                        768: {
-                            slidesPerView: 2,
-                        },
-                        1366: {
-                            slidesPerView: 3,
-                        }
-                    }}
-                >
+            <SlidesHole>
+                <SlidesContainer>
                     {
                         programs.map(({ id, author, date, header, text, imageUrl, href }) => (
-                            <SwiperSlide key={id}>
-                                <SlideItem>
-                                    <img src={imageUrl} alt={header} loading="lazy" />
-                                    <div>
-                                        <span>{author}</span>
-                                        <div></div>
-                                        <span>{date}</span>
-                                    </div>
-                                    <h2>{header}</h2>
-                                    <p>{text}</p>
-                                    <a href={href} target="_blank" rel="noopener">
-                                        <ion-icon name="log-out-outline"></ion-icon>
-                                        <span>Bővebben</span>
-                                    </a>
-                                </SlideItem>
-                            </SwiperSlide>
+                            <Slide key={id}>
+                                <img src={imageUrl} alt={header} loading="lazy" />
+                                <div>
+                                    <span>{author}</span>
+                                    <div></div>
+                                    <span>{date}</span>
+                                </div>
+                                <h2>{header}</h2>
+                                <p>{text}</p>
+                                <a href={href} target="_blank" rel="noopener">
+                                    <ion-icon name="log-out-outline"></ion-icon>
+                                    <span>Bővebben</span>
+                                </a>
+                            </Slide>
                         ))
                     }
-
-                </Swiper>
-            </SwiperContainer>
+                </SlidesContainer>
+            </SlidesHole>
 
         </Container>
     );
@@ -138,12 +116,27 @@ const Title = styled.div`
     }
 `;
 
-const SwiperContainer = styled.div`
+const SlidesHole = styled.div`
     width: 100%;
+    overflow-x: auto;
 `;
 
-const SlideItem = styled.div`
+const SlidesContainer = styled.div`
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+`;
+
+const Slide = styled.div`
     padding-bottom: 5rem;
+    width: calc(100vw - 2rem);
+
+    @media(min-width: 768px) {
+        width: calc((100vw - 2rem) / 2);
+    }
+    @media(min-width: 1366px) {
+        width: calc((100vw - 2rem) / 3);
+    }
 
     img {
         width: 100%;

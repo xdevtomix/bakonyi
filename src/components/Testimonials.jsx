@@ -144,10 +144,10 @@ const Slide = styled.div`
     width: calc(100vw - 2rem);
 
     @media(min-width: 768px) {
-        width: calc(50vw - 1rem);
+        width: calc((100vw - 2rem) / 2);
     }
     @media(min-width: 1024px) {
-        width: calc(25vw - 0.5rem);
+        width: calc((100vw - 2rem) / 4);
     }
 
     >div {
