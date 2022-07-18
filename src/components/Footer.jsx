@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
 
             <div>
-                <h2>Elérhetőségeink</h2>
+                <h2>Kattintson elérhetőségeinkre</h2>
                 <ul>
                     <li>
                         <ion-icon name="call"></ion-icon>
