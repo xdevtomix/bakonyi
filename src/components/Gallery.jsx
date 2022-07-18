@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import szoba2_1_m from '../images/szoba2_1_m.jpg';
 import szoba2_2_m from '../images/szoba2_2_m.jpg';
@@ -41,9 +39,6 @@ import udvar_teli_1_m from '../images/udvar_teli_1_m.jpg';
 import udvar_teli_2_m from '../images/udvar_teli_2_m.jpg';
 
 import epleny_1_m from '../images/epleny_1_m.jpg';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 const images = [
     { id: 'szoba2_1_m', which: 'Szoba 2', what: 'Ágy', imageUrl: szoba2_1_m },
@@ -97,37 +92,19 @@ export default function Gallery() {
                 <div></div>
             </Title>
 
-            <SwiperContainer>
-                <Swiper
-                    modules={[Pagination, Autoplay]}
-                    pagination={{ clickable: true }}
-                    autoplay={{ delay: 20 * 1000 }}
-                    /* loop */
-                    speed={300}
-                    spaceBetween={20}
-                    breakpoints={{
-                        768: {
-                            slidesPerView: 2,
-                        },
-                        1024: {
-                            slidesPerView: 3,
-                        }
-                    }}
-                >
+            <SlidesHole>
+                <SlidesContainer>
                     {
                         images.map(({ id, which, what, imageUrl }) => (
-                            <SwiperSlide key={id}>
-                                <SlideItem>
-                                    <img src={imageUrl} alt={`${which} - ${what}`} loading="lazy" />
-                                    <h2>{which}</h2>
-                                    <p>{what}</p>
-                                </SlideItem>
-                            </SwiperSlide>
+                            <Slide key={id}>
+                                <img src={imageUrl} alt={`${which} - ${what}`} loading="lazy" />
+                                <h2>{which}</h2>
+                                <p>{what}</p>
+                            </Slide>
                         ))
                     }
-
-                </Swiper>
-            </SwiperContainer>
+                </SlidesContainer>
+            </SlidesHole>
 
         </Container>
     );
@@ -158,12 +135,27 @@ const Title = styled.div`
     }
 `;
 
-const SwiperContainer = styled.div`
+const SlidesHole = styled.div`
     width: 100%;
+    overflow-x: auto;
 `;
 
-const SlideItem = styled.div`
+const SlidesContainer = styled.div`
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+`;
+
+const Slide = styled.div`
     padding-bottom: 4rem;
+    width: calc(100vw - 2rem);
+
+    @media(min-width: 768px) {
+        width: calc((100vw - 2rem) / 2);
+    }
+    @media(min-width: 1024px) {
+        width: calc((100vw - 2rem) / 3);
+    }
 
     img {
         width: 100%;
