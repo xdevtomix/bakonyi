@@ -1,8 +1,5 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
 
 const seasons = [
     {
@@ -211,23 +208,31 @@ const descriptions = {
 };
 
 export default function Pricing() {
-    const [season, setSeason] = useState(3);
+    const [selectedSeason, setSelectedSeason] = useState(3);
     const [isRoomInfoVisible, setIsRoomInfoVisible] = useState({
         'Szoba 2': false,
         'Szoba 3': false,
         'Apartman 5': false,
         'Apartman 7': false,
     });
-    const swiperRef = useRef(null);
+    const slidesHoleRef = useRef(null);
+    const slideRef = useRef(null); // gets the last one but it is ok as the height is the same for all
 
-    const onSwiper = (swiper) => {
-        swiperRef.current = swiper;
-    };
+    useEffect(() => {
+        const setHeight = () => {
+            setTimeout(() => {
+                slidesHoleRef.current.style.height = `${slideRef.current.getBoundingClientRect().height}px`;
+            }, 0);
+        };
 
-    const handleSeasonChange = (id) => {
-        setSeason(id);
-        swiperRef.current.slideTo(id - 1, 1000);
-    };
+        setHeight();
+
+        window.addEventListener('resize', setHeight);
+
+        return () => {
+            window.removeEventListener('resize', setHeight);
+        };
+    }, []);
 
     return (
         <Container data-component="pricing" id="araink">
@@ -240,53 +245,53 @@ export default function Pricing() {
 
             <Info>Mikor jönne? Kattintson!</Info>
 
-            <SeasonSelector season={season}>
+            <SeasonSelector season={selectedSeason}>
                 {seasons.map((season) => (
-                    <div key={season.id} onClick={() => handleSeasonChange(season.id)}>{season.duration}</div>
+                    <div key={season.id} onClick={() => setSelectedSeason(season.id)}>{season.duration}</div>
                 ))}
             </SeasonSelector>
 
-            <Swiper allowTouchMove={false} onSwiper={(swiper) => onSwiper(swiper)}>
+            <SlidesHole ref={slidesHoleRef}>
+                <SlidesContainer>
+                    {
+                        seasons.map((season) => (
+                            <Slide key={season.id} isVisible={selectedSeason === season.id} ref={slideRef}>
 
-                {seasons.map((season) => (
-                    <SwiperSlide key={season.id}>
-                        <BoxesContainer>
-
-                            {season.places.map((place) => (
-                                <Box key={place.name}>
-                                    <h2>{place.name}</h2>
-                                    <span onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: true })}>
-                                        <ion-icon name="information-circle-outline"></ion-icon>
-                                    </span>
-                                    <ul>
-                                        {place.prices.map((price) => (
-                                            <li key={price.label}>
-                                                <span>{price.label}</span>
-                                                <span>{price.price}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                    <RoomInfo isVisible={isRoomInfoVisible[place.name]}>
-                                        <span onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: false })}>
-                                            <ion-icon name="close-outline"></ion-icon>
+                                {season.places.map((place) => (
+                                    <Box key={place.name}>
+                                        <h2>{place.name}</h2>
+                                        <span onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: true })}>
+                                            <ion-icon name="information-circle-outline"></ion-icon>
                                         </span>
                                         <ul>
-                                            {descriptions[place.name].map((description) => (
-                                                <li key={description.id}>
-                                                    <ion-icon name="checkmark-outline"></ion-icon>
-                                                    <span>{description.text}</span>
+                                            {place.prices.map((price) => (
+                                                <li key={price.label}>
+                                                    <span>{price.label}</span>
+                                                    <span>{price.price}</span>
                                                 </li>
                                             ))}
                                         </ul>
-                                    </RoomInfo>
-                                </Box>
-                            ))}
+                                        <RoomInfo isVisible={isRoomInfoVisible[place.name]}>
+                                            <span onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: false })}>
+                                                <ion-icon name="close-outline"></ion-icon>
+                                            </span>
+                                            <ul>
+                                                {descriptions[place.name].map((description) => (
+                                                    <li key={description.id}>
+                                                        <ion-icon name="checkmark-outline"></ion-icon>
+                                                        <span>{description.text}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </RoomInfo>
+                                    </Box>
+                                ))}
 
-                        </BoxesContainer>
-                    </SwiperSlide>
-                ))}
-
-            </Swiper>
+                            </Slide>
+                        ))
+                    }
+                </SlidesContainer>
+            </SlidesHole>
 
             <PricesInfo>
                 Az árak egy éjszakára vonatkoznak és nem tartalmazzák az idegenforgalmi adót.
@@ -299,13 +304,6 @@ export default function Pricing() {
 const Container = styled.section`
     margin-top: 8rem;
     padding: 0 1rem;
-`;
-
-const Info = styled.div`
-    text-align: center;
-    font-size: 1rem;
-    color: var(--light-night);
-    margin-bottom: 2rem;
 `;
 
 const Title = styled.div`   
@@ -326,6 +324,13 @@ const Title = styled.div`
         width: max-content;
         padding: 0.5rem 1rem;
     }
+`;
+
+const Info = styled.div`
+    text-align: center;
+    font-size: 1rem;
+    color: var(--light-night);
+    margin-bottom: 2rem;
 `;
 
 const SeasonSelector = styled.div`
@@ -351,12 +356,23 @@ const SeasonSelector = styled.div`
     }
 `;
 
-const BoxesContainer = styled.div`
+const SlidesHole = styled.div`
+    width: 100%;
+`;
+
+const SlidesContainer = styled.div`
+    position: relative;
+`;
+
+const Slide = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    position: absolute;
+    transition: opacity 1000ms;
+    opacity: ${({ isVisible }) => isVisible ? 1 : 0};
 
     @media(min-width: 1024px) {
         gap: 4rem;
