@@ -1,9 +1,4 @@
 import styled from "styled-components";
-import { Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
-import 'swiper/css/pagination';
 
 const testimonials = [
     {
@@ -78,40 +73,22 @@ export default function Testimonials() {
                 amikor elutazásuk után pozitív visszajelzést kapunk:
             </Info>
 
-            <SwiperContainer>
-                <Swiper
-                    modules={[Pagination, Autoplay]}
-                    pagination={{ clickable: true }}
-                    autoplay={{ delay: 20 * 1000 }}
-                    /* loop */
-                    breakpoints={{
-                        768: {
-                            slidesPerView: 2,
-                            spaceBetween: 20
-                        },
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 20
-                        }
-                    }}
-                >
+            <SlidesHole>
+                <SlidesContainer>
                     {
                         testimonials.map(({ id, text, name }) => (
-                            <SwiperSlide key={id}>
-                                <SlideItem>
-                                    <div>
-                                        "{text}"
-                                    </div>
-                                    <p>
-                                        {name}
-                                    </p>
-                                </SlideItem>
-                            </SwiperSlide>
+                            <Slide key={id}>
+                                <div>
+                                    "{text}"
+                                </div>
+                                <p>
+                                    {name}
+                                </p>
+                            </Slide>
                         ))
                     }
-
-                </Swiper>
-            </SwiperContainer>
+                </SlidesContainer>
+            </SlidesHole>
 
         </Container>
     );
@@ -150,13 +127,28 @@ const Info = styled.div`
     letter-spacing: 0.125rem;
 `;
 
-const SwiperContainer = styled.div`
+const SlidesHole = styled.div`
     width: 100%;
+    overflow-x: auto;
 `;
 
-const SlideItem = styled.div`
+const SlidesContainer = styled.div`
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+`;
+
+const Slide = styled.div`
     background-color: var(--day);
     padding: 0 1rem 2rem 1rem;
+    width: calc(100vw - 2rem);
+
+    @media(min-width: 768px) {
+        width: calc(50vw - 1rem);
+    }
+    @media(min-width: 1024px) {
+        width: calc(25vw - 0.5rem);
+    }
 
     >div {
         font-size: 1rem;
