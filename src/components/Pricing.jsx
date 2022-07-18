@@ -371,7 +371,7 @@ const Slide = styled.div`
     justify-content: center;
     gap: 2rem;
     position: absolute;
-    transition: opacity 1000ms;
+    transition: opacity 200ms;
     opacity: ${({ isVisible }) => isVisible ? 1 : 0};
 
     @media(min-width: 1024px) {
