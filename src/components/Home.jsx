@@ -1,28 +1,30 @@
+import { useState, useEffect } from "react";
 import styled from "styled-components";
-import { Pagination, Autoplay } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import bakonyiKulso1 from '/src/images/bakonyiapartmanhaz_kulso_1.jpg';
 import bakonyiKulso2 from '/src/images/bakonyiapartmanhaz_kulso_2.jpg';
 import bakonyiKulso1Mobile from '/src/images/bakonyiapartmanhaz_kulso_1_mobile.jpg';
 import bakonyiKulso2Mobile from '/src/images/bakonyiapartmanhaz_kulso_2_mobile.jpg';
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-
 export default function Home() {
+    const [selectedSlide, setSelectedSlide] = useState(1);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setSelectedSlide((v) => v === 1 ? 2 : 1);
+        }, 20 * 1000);
+
+        return () => {
+            clearInterval(interval);
+        };
+    }, []);
+
     return (
         <Container data-component="home" id="fooldal">
-            <Swiper
-                modules={[Pagination, Autoplay]}
-                pagination={{ clickable: true }}
-                autoplay={{ delay: 10 * 1000 }}
-                speed={1000}
-                spaceBetween={8}
-                loop
-            >
-                <SwiperSlide>
-                    <SlideItem>
+
+            <SlidesHole>
+                <SlidesContainer>
+                    <Slide isVisible={selectedSlide === 1}>
                         {/* <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso1Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso1} />
@@ -32,11 +34,9 @@ export default function Home() {
                         <span>Jöjjön el...</span>
                         <h2>...érezze otthon magát nálunk</h2>
                         <a href="mailto:dreissiger@gmail.com">Írjon</a>
-                    </SlideItem>
-                </SwiperSlide>
+                    </Slide>
 
-                <SwiperSlide>
-                    <SlideItem>
+                    <Slide isVisible={selectedSlide === 2}>
                         {/* <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso2Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso2} />
@@ -46,9 +46,10 @@ export default function Home() {
                         <span>Pihenjen...</span>
                         <h2>...és azután induljon a nap</h2>
                         <a href="tel:+36-70-31-22-091">Hívjon</a>
-                    </SlideItem>
-                </SwiperSlide>
-            </Swiper>
+                    </Slide>
+                </SlidesContainer>
+            </SlidesHole>
+
         </Container>
     );
 }
@@ -63,14 +64,25 @@ const Container = styled.section`
     }
 `;
 
-const SlideItem = styled.div`
+const SlidesHole = styled.div`
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+`;
+
+const SlidesContainer = styled.div`
+    position: relative;
+`;
+
+const Slide = styled.div`
     width: 100%;
     height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    position: relative;
+    position: absolute;
     padding-bottom: 4rem;
+    transition: opacity 2000ms;
+    opacity: ${({ isVisible }) => isVisible ? 1 : 0};
 
     img {
         position: absolute;
