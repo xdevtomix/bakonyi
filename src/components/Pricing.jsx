@@ -219,18 +219,14 @@ export default function Pricing() {
     const slideRef = useRef(null); // gets the last one but it is ok as the height is the same for all
 
     useEffect(() => {
-        const setHeight = () => {
-            setTimeout(() => {
-                slidesHoleRef.current.style.height = `${slideRef.current.getBoundingClientRect().height}px`;
-            }, 0);
-        };
+        const resizeObserver = new ResizeObserver(() => {
+            slidesHoleRef.current.style.height = `${slideRef.current.getBoundingClientRect().height}px`;
+        });
 
-        setHeight();
-
-        window.addEventListener('resize', setHeight);
+        resizeObserver.observe(slideRef.current);
 
         return () => {
-            window.removeEventListener('resize', setHeight);
+            resizeObserver.unobserve(slideRef.current);
         };
     }, []);
 
