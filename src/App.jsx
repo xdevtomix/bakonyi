@@ -1,15 +1,16 @@
+import React, { Suspense } from 'react';
 import styled, { StyleSheetManager } from "styled-components";
 
 import Header from "./components/Header";
 import Home from "./components/Home";
-import Introduction from "./components/Introduction";
-import Services from "./components/Services";
-import Pricing from "./components/Pricing";
-/* import Breakfast from "./components/Breakfast"; */
-import Programs from "./components/Programs";
-import Testimonials from "./components/Testimonials";
-import Gallery from "./components/Gallery";
-import Footer from "./components/Footer";
+const Introduction = React.lazy(() => import('./components/Introduction'));
+const Services = React.lazy(() => import('./components/Services'));
+const Pricing = React.lazy(() => import('./components/Pricing'));
+/* const Breakfast = React.lazy(() => import('./components/Breakfast')); */
+const Programs = React.lazy(() => import('./components/Programs'));
+const Testimonials = React.lazy(() => import('./components/Testimonials'));
+const Gallery = React.lazy(() => import('./components/Gallery'));
+const Footer = React.lazy(() => import('./components/Footer'));
 
 export default function App() {
   return (
@@ -17,14 +18,16 @@ export default function App() {
       <Container data-component="app">
         <Header />
         <Home />
-        <Introduction />
-        <Services />
-        <Pricing />
-        {/* <Breakfast /> */}
-        <Programs />
-        <Testimonials />
-        <Gallery />
-        <Footer />
+        <Suspense>
+          <Introduction />
+          <Services />
+          <Pricing />
+          {/* <Breakfast /> */}
+          <Programs />
+          <Testimonials />
+          <Gallery />
+          <Footer />
+        </Suspense>
       </Container>
     </StyleSheetManager>
   )
