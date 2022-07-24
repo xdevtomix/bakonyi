@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "preact/hooks";
 import styled from "styled-components";
 
 export default function Breakfast() {

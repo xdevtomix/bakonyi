@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "preact/hooks";
 import styled from "styled-components";
 
 import bakonyiKulso1 from '/src/images/bakonyiapartmanhaz_kulso_1.jpg';
