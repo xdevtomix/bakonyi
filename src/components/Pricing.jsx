@@ -344,6 +344,7 @@ const SeasonSelector = styled.div`
         padding: 0.5rem 1rem;
         cursor: pointer;
         transition: transform 200ms;
+        user-select: none;
     }
 
     div:nth-child(${({ season }) => season}) {
