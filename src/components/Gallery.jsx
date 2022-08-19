@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "preact/hooks";
 import styled from "styled-components";
 
 import szoba2_1_m from '../images/szoba2_1_m.jpg';
@@ -83,6 +84,12 @@ const images = [
 ];
 
 export default function Gallery() {
+    const slidesHoleRef = useRef(null);
+
+    useEffect(() => {
+        slidesHoleRef.current.scrollLeft = 50;
+    }, []);
+
     return (
         <Container data-component="gallery" id="galeria">
 
@@ -92,7 +99,7 @@ export default function Gallery() {
                 <div></div>
             </Title>
 
-            <SlidesHole>
+            <SlidesHole ref={slidesHoleRef}>
                 <SlidesContainer>
                     {
                         images.map(({ id, which, what, imageUrl }) => (

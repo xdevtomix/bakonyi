@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "preact/hooks";
 import styled from "styled-components";
 
 import bakonyiLatnivalo1 from '../images/bakonyi_latnivalo_1.jpeg';
@@ -55,6 +56,12 @@ const programs = [
 ];
 
 export default function Programs() {
+    const slidesHoleRef = useRef(null);
+
+    useEffect(() => {
+        slidesHoleRef.current.scrollLeft = 50;
+    }, []);
+
     return (
         <Container data-component="programs" id="latnivalok">
 
@@ -64,7 +71,7 @@ export default function Programs() {
                 <div></div>
             </Title>
 
-            <SlidesHole>
+            <SlidesHole ref={slidesHoleRef}>
                 <SlidesContainer>
                     {
                         programs.map(({ id, author, date, header, text, imageUrl, href }) => (

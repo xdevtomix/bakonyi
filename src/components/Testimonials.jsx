@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "preact/hooks";
 import styled from "styled-components";
 
 const testimonials = [
@@ -59,6 +60,12 @@ const testimonials = [
 ];
 
 export default function Testimonials() {
+    const slidesHoleRef = useRef(null);
+
+    useEffect(() => {
+        slidesHoleRef.current.scrollLeft = 50;
+    }, []);
+
     return (
         <Container data-component="testimonials" id="velemenyek">
 
@@ -73,7 +80,7 @@ export default function Testimonials() {
                 amikor elutazásuk után pozitív visszajelzést kapunk:
             </Info>
 
-            <SlidesHole>
+            <SlidesHole ref={slidesHoleRef}>
                 <SlidesContainer>
                     {
                         testimonials.map(({ id, text, name }) => (
