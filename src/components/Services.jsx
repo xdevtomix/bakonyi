@@ -58,7 +58,7 @@ const data = [
         id: 9,
         icon: 'storefront-outline',
         header: 'Különterem',
-        text: 'Az apartmanházban igény esetén 20 főt befogadni képes különterem bérelhető. Az ár: 10000 Ft nyáron, 15000 Ft télen / nap.'
+        text: 'Az apartmanházban igény esetén 20 főt befogadni képes különterem bérelhető. Az ár: 10000 Ft a nyári, 15000 Ft a téli szezonban / nap.'
     },
     {
         id: 10,
