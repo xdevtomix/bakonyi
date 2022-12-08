@@ -64,7 +64,7 @@ const data = [
         id: 10,
         icon: 'paw-outline',
         header: 'Kisállat',
-        text: 'A szállásunk állatbarát, kutyabarát. Minden amúgy is lakásban élő kisállatot szívesen látunk. Az ár: 3000 Ft / kisállat / nap.'
+        text: 'A szállásunk állatbarát, kutyabarát. Minden amúgy is lakásban élő kisállatot szívesen látunk. Az ár: 3500 Ft / kisállat / nap.'
     },
     {
         id: 11,
