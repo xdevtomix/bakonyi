@@ -4,7 +4,7 @@ import styled from "styled-components";
 const seasons = [
     {
         id: 1,
-        duration: '2022.10.15 - 2023.04.15',
+        duration: '2023.10.15 - 2024.04.15',
         places: [
             {
                 name: 'Szoba 2',
@@ -122,7 +122,7 @@ const descriptions = {
 };
 
 export default function Pricing() {
-    const [selectedSeason, setSelectedSeason] = useState(1);
+    const [selectedSeason, setSelectedSeason] = useState(2);
     const [isRoomInfoVisible, setIsRoomInfoVisible] = useState({
         'Szoba 2': false,
         'Szoba 3': false,
