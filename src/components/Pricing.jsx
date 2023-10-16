@@ -47,7 +47,7 @@ const seasons = [
     },
     {
         id: 2,
-        duration: '2023.04.16 - 2023.10.14',
+        duration: '2024.04.16 - 2024.10.14',
         places: [
             {
                 name: 'Szoba 2',
@@ -122,7 +122,7 @@ const descriptions = {
 };
 
 export default function Pricing() {
-    const [selectedSeason, setSelectedSeason] = useState(2);
+    const [selectedSeason, setSelectedSeason] = useState(1);
     const [isRoomInfoVisible, setIsRoomInfoVisible] = useState({
         'Szoba 2': false,
         'Szoba 3': false,
