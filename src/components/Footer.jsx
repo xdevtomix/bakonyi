@@ -85,11 +85,6 @@ export default function Footer() {
                         </a>
                     </li>
                     <li>
-                        <a href="#szolgaltatasaink">
-                            82-es Kisvendéglő Eplény
-                        </a>
-                    </li>
-                    <li>
                         <a href="https://bakonyi-apartmanhaz.business.site" target="_blank" rel="noopener">
                             Google útvonaltervező
                         </a>

@@ -13,7 +13,7 @@ const data = [
         id: 2,
         icon: 'pizza-outline',
         header: 'Ebéd, vacsora',
-        text: 'Szállóvendégeink részére a legnagyobb múltú eplényi étterem, a 82-es Kisvendéglő 10%-os kedvezményt kínál az ételek árából.'
+        text: 'Pár percre a szállástól két étterem várja az enni és inni vágyókat.'
     },
     {
         id: 3,
