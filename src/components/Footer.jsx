@@ -59,6 +59,12 @@ export default function Footer() {
                         </a>
                     </li>
                     <li>
+                        <ion-icon name="home-outline"></ion-icon>
+                        <a href="https://docs.google.com/document/d/e/2PACX-1vTyG6rCnktFRNjxMur0NCeREYn6EEIOSzxnMaEBUX3yAKL0ag_CBK5pqNGGETLgA1wuSE8h3BDy9u7r/pub" target="_blank" rel="noopener">
+                            <span>Házirend</span>
+                        </a>
+                    </li>
+                    <li>
                         <ion-icon name="podium"></ion-icon>
                         <span>NTAK: MA19006009</span>
                     </li>
