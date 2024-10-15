@@ -20,7 +20,7 @@ export default function Introduction() {
             </p>
 
             <p>
-                Étkezési lehetőség, boltok, az Ámos-hegyi kilátó és a Kalandhegy mind percek alatt elérhetőek.
+                Étkezési lehetőség, boltok és a Kalandhegy mind percek alatt elérhetőek.
             </p>
 
             <p>
