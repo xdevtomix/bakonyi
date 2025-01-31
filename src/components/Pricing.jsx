@@ -153,7 +153,7 @@ export default function Pricing() {
                 <div></div>
             </Title>
 
-            <Info>Mikor jönne? Kattintson!</Info>
+            {/* <Info>Mikor jönne? Kattintson!</Info> */}
 
             {/* <SeasonSelector season={selectedSeason}>
                 {seasons.map((season) => (
@@ -204,7 +204,7 @@ export default function Pricing() {
             </SlidesHole>
 
             <PricesInfo>
-                Az árak egy éjszakára vonatkoznak és nem tartalmazzák az idegenforgalmi adót.
+                Az árak egy éjszakára vonatkoznak és nem tartalmazzák az idegenforgalmi adót. Egy éjszakás foglalás esetén 10% felárat számítunk fel.
             </PricesInfo>
 
         </Container>
