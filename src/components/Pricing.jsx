@@ -45,7 +45,7 @@ const seasons = [
             }
         ],
     },
-    {
+    /* {
         id: 2,
         duration: '2025.04.16 - 2025.10.14',
         places: [
@@ -87,7 +87,7 @@ const seasons = [
                 ]
             }
         ],
-    },
+    }, */
 ];
 
 const descriptions = {
@@ -155,11 +155,11 @@ export default function Pricing() {
 
             <Info>Mikor jönne? Kattintson!</Info>
 
-            <SeasonSelector season={selectedSeason}>
+            {/* <SeasonSelector season={selectedSeason}>
                 {seasons.map((season) => (
                     <div key={season.id} onClick={() => setSelectedSeason(season.id)}>{season.duration}</div>
                 ))}
-            </SeasonSelector>
+            </SeasonSelector> */}
 
             <SlidesHole ref={slidesHoleRef}>
                 <SlidesContainer>
