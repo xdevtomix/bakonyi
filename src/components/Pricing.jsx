@@ -204,7 +204,7 @@ export default function Pricing() {
             </SlidesHole>
 
             <PricesInfo>
-                Az árak egy éjszakára vonatkoznak és nem tartalmazzák az idegenforgalmi adót. Egy éjszakás foglalás esetén 10% felárat számítunk fel.
+                Az árak egy éjszakára vonatkoznak és nem tartalmazzák az idegenforgalmi adót. Egyéjszakás foglalás esetén 10% felárat számítunk fel.
             </PricesInfo>
 
         </Container>
