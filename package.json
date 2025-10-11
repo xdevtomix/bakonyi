@@ -10,11 +10,11 @@
     "serve": "vite preview"
   },
   "dependencies": {
-    "preact": "^10.10.0",
-    "styled-components": "^5.3.5"
+    "preact": "^10.27.2",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.3.0",
-    "vite": "^3.0.1"
+    "@preact/preset-vite": "^2.10.2",
+    "vite": "^7.1.9"
   }
 }
