@@ -9,16 +9,16 @@ const seasons = [
             {
                 name: 'Szoba 2',
                 prices: [
-                    { label: '1 fő', price: '15 000 Ft' },
-                    { label: '2 fő', price: '20 000 Ft' },
+                    { label: '1 fő', price: '18 000 Ft' },
+                    { label: '2 fő', price: '22 000 Ft' },
                 ]
             },
             {
                 name: 'Szoba 3',
                 prices: [
-                    { label: '1 fő', price: '15 000 Ft' },
-                    { label: '2 fő', price: '20 000 Ft' },
-                    { label: '3 fő', price: '24 000 Ft' },
+                    { label: '1 fő', price: '17 000 Ft' },
+                    { label: '2 fő', price: '22 000 Ft' },
+                    { label: '3 fő', price: '26 000 Ft' },
                 ]
             },
             {
@@ -26,9 +26,9 @@ const seasons = [
                 prices: [
                     { label: '1 fő', price: '30 000 Ft' },
                     { label: '2 fő', price: '30 000 Ft' },
-                    { label: '3 fő', price: '35 000 Ft' },
-                    { label: '4 fő', price: '38 000 Ft' },
-                    { label: '5 fő', price: '42 000 Ft' },
+                    { label: '3 fő', price: '36 000 Ft' },
+                    { label: '4 fő', price: '40 000 Ft' },
+                    { label: '5 fő', price: '45 000 Ft' },
                 ]
             },
             {
@@ -38,9 +38,9 @@ const seasons = [
                     { label: '2 fő', price: '35 000 Ft' },
                     { label: '3 fő', price: '42 000 Ft' },
                     { label: '4 fő', price: '46 000 Ft' },
-                    { label: '5 fő', price: '50 000 Ft' },
+                    { label: '5 fő', price: '52 000 Ft' },
                     { label: '6 fő', price: '56 000 Ft' },
-                    { label: '7 fő', price: '60 000 Ft' },
+                    { label: '7 fő', price: '62 000 Ft' },
                 ]
             }
         ],
