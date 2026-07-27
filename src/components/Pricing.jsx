@@ -10,25 +10,25 @@ const seasons = [
                 name: 'Szoba 2',
                 prices: [
                     { label: '1 fő', price: '18 000 Ft' },
-                    { label: '2 fő', price: '22 000 Ft' },
+                    { label: '2 fő', price: '23 000 Ft' },
                 ]
             },
             {
                 name: 'Szoba 3',
                 prices: [
-                    { label: '1 fő', price: '17 000 Ft' },
-                    { label: '2 fő', price: '22 000 Ft' },
-                    { label: '3 fő', price: '26 000 Ft' },
+                    { label: '1 fő', price: '18 000 Ft' },
+                    { label: '2 fő', price: '23 000 Ft' },
+                    { label: '3 fő', price: '28 000 Ft' },
                 ]
             },
             {
                 name: 'Apartman 5',
                 prices: [
-                    { label: '1 fő', price: '30 000 Ft' },
-                    { label: '2 fő', price: '30 000 Ft' },
-                    { label: '3 fő', price: '36 000 Ft' },
-                    { label: '4 fő', price: '40 000 Ft' },
-                    { label: '5 fő', price: '45 000 Ft' },
+                    { label: '1 fő', price: '32 000 Ft' },
+                    { label: '2 fő', price: '32 000 Ft' },
+                    { label: '3 fő', price: '37 000 Ft' },
+                    { label: '4 fő', price: '42 000 Ft' },
+                    { label: '5 fő', price: '47 000 Ft' },
                 ]
             },
             {
@@ -37,10 +37,10 @@ const seasons = [
                     { label: '1 fő', price: '35 000 Ft' },
                     { label: '2 fő', price: '35 000 Ft' },
                     { label: '3 fő', price: '42 000 Ft' },
-                    { label: '4 fő', price: '46 000 Ft' },
-                    { label: '5 fő', price: '52 000 Ft' },
-                    { label: '6 fő', price: '56 000 Ft' },
-                    { label: '7 fő', price: '62 000 Ft' },
+                    { label: '4 fő', price: '48 000 Ft' },
+                    { label: '5 fő', price: '53 000 Ft' },
+                    { label: '6 fő', price: '58 000 Ft' },
+                    { label: '7 fő', price: '64 000 Ft' },
                 ]
             }
         ],
