@@ -1,6 +1,6 @@
 import { render } from 'preact';
 import { addIcons } from 'ionicons';
-import { defineCustomElements } from 'ionicons/loader';
+import { defineCustomElement } from 'ionicons/components/ion-icon.js';
 import {
     bedOutline,
     beerOutline,
@@ -57,6 +57,5 @@ addIcons({
     wifiOutline,
 });
 
-defineCustomElements().then(() => {
-    render(<App />, document.getElementById('root'));
-});
+defineCustomElement();
+render(<App />, document.getElementById('root'));
