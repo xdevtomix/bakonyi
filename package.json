@@ -10,6 +10,7 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "ionicons": "^8.1.0",
     "preact": "^11.0.1",
     "styled-components": "^6.6.0"
   },

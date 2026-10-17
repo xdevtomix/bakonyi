@@ -75,11 +75,6 @@ export default function Footer() {
                 <h2>Partnereink</h2>
                 <ul>
                     <li>
-                        <a href="https://kisfaludyprogram.hu" target="_blank" rel="noopener">
-                            A 2021-es felújítás a Kisfaludy Program támogatásával valósult meg
-                        </a>
-                    </li>
-                    <li>
                         <a href="https://siarena.hu" target="_blank" rel="noopener">
                             siarena.hu
                         </a>
