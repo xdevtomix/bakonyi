@@ -40,7 +40,7 @@ export default function Introduction() {
             <br />
 
             <a href="https://maps.app.goo.gl/doW6veB4nHH5LcFm6" target="_blank" rel="noopener">
-                <ion-icon name="log-out-outline"></ion-icon>
+                <ion-icon name="locate-outline"></ion-icon>
                 Google útvonaltervező
             </a>
         </Container>
