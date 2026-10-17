@@ -2,17 +2,9 @@ import styled from "styled-components";
 
 const data = [
     {
-        id: 1,
-        icon: 'fast-food-outline',
-        header: 'Reggeli',
-        text: `
-            Szerezze be a reggelihez valót a szállás melletti kisboltban, vagy Eplény új, vasárnap is nyitvatartó üzletében!
-        `
-    },
-    {
         id: 2,
         icon: 'pizza-outline',
-        header: 'Ebéd, vacsora',
+        header: 'Reggeli, ebéd, vacsora',
         text: 'Pár percre a szállástól két étterem várja az enni és inni vágyókat.'
     },
     {
@@ -77,6 +69,16 @@ const data = [
         icon: 'wallet-outline',
         header: 'Síbérlet',
         text: 'Szállóvendégeink részére a sípálya 10%-os kedvezményt biztosít a bérletek árából.'
+    },
+    {
+        id: 1,
+        icon: 'moon-outline',
+        header: 'Rendezvények, legénybúcsúk',
+        text: `
+            Szálláshelyünk a nyugodt pihenést és kikapcsolódást szolgálja, ezért legény- és leánybúcsúk, 
+            illetve hangos rendezvények megtartására sajnos nem áll módunkban helyszínt biztosítani.
+            Köszönjük a megértést!
+        `
     },
 ];
 
