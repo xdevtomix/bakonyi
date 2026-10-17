@@ -87,6 +87,7 @@ export default function Footer() {
                 </ul>
             </div>
 
+            <Version>Verzió: {document.documentElement.dataset.version}</Version>
         </Container>
     );
 }
@@ -143,4 +144,11 @@ const Container = styled.div`
             }
         }
     }
+`;
+
+const Version = styled.small`
+    grid-column: 1 / -1;
+    justify-self: end;
+    color: var(--light-night);
+    font-size: 0.75rem;
 `;
