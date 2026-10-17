@@ -45,13 +45,13 @@ export default function Header() {
     );
 
     return (
-        <Container data-component="header" isShadowVisible={isShadowVisible}>
+        <Container data-component="header" $isShadowVisible={isShadowVisible}>
             <Logo href="#fooldal">
                 <span>Bakonyi</span>Apartmanház
             </Logo>
 
             {isSmallScreen && (
-                <VerticalMenu isVerticalMenuVisible={isVerticalMenuVisible} onClick={() => setIsVerticalMenuVisible(false)}>
+                <VerticalMenu $isVerticalMenuVisible={isVerticalMenuVisible} onClick={() => setIsVerticalMenuVisible(false)}>
                     <Links />
                 </VerticalMenu>
             )}
@@ -80,7 +80,7 @@ const Container = styled.header`
     align-items: center;
     justify-content: space-between;
     background-color: var(--day);
-    box-shadow: ${({ isShadowVisible }) => isShadowVisible ? '0 0 1rem var(--light-night)' : ''};
+    box-shadow: ${({ $isShadowVisible }) => $isShadowVisible ? '0 0 1rem var(--light-night)' : ''};
     padding: 0 2rem;
 
     >span {
@@ -121,7 +121,7 @@ const VerticalMenu = styled.nav`
     flex-direction: column;
     gap: 1.5rem;
     transition: 250ms;
-    transform: translate3d(${({ isVerticalMenuVisible }) => isVerticalMenuVisible ? '0' : '-100%'}, 0, 0);
+    transform: translate3d(${({ $isVerticalMenuVisible }) => $isVerticalMenuVisible ? '0' : '-100%'}, 0, 0);
 `;
 
 const HorizontalMenu = styled.nav`

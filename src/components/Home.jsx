@@ -24,7 +24,7 @@ export default function Home() {
 
             <SlidesHole>
                 <SlidesContainer>
-                    <Slide isVisible={selectedSlide === 1}>
+                    <Slide $isVisible={selectedSlide === 1}>
                         {/* <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso1Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso1} />
@@ -36,7 +36,7 @@ export default function Home() {
                         <a href="mailto:dreissiger@gmail.com">Írjon</a>
                     </Slide>
 
-                    <Slide isVisible={selectedSlide === 2}>
+                    <Slide $isVisible={selectedSlide === 2}>
                         {/* <picture>
                             <source media="(max-width: 767px)" srcSet={bakonyiKulso2Mobile} />
                             <source media="(min-width: 768px)" srcSet={bakonyiKulso2} />
@@ -82,7 +82,7 @@ const Slide = styled.div`
     position: absolute;
     padding-bottom: 4rem;
     transition: opacity 2000ms;
-    opacity: ${({ isVisible }) => isVisible ? 1 : 0};
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
 
     img {
         position: absolute;

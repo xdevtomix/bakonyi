@@ -165,7 +165,7 @@ export default function Pricing() {
                 <SlidesContainer>
                     {
                         seasons.map((season) => (
-                            <Slide key={season.id} isVisible={selectedSeason === season.id} ref={slideRef}>
+                            <Slide key={season.id} $isVisible={selectedSeason === season.id} ref={slideRef}>
 
                                 {season.places.map((place) => (
                                     <Box key={place.name}>
@@ -181,7 +181,7 @@ export default function Pricing() {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <RoomInfo isVisible={isRoomInfoVisible[place.name]}>
+                                        <RoomInfo $isVisible={isRoomInfoVisible[place.name]}>
                                             <span onClick={() => setIsRoomInfoVisible({ ...isRoomInfoVisible, [place.name]: false })}>
                                                 <ion-icon name="close-outline"></ion-icon>
                                             </span>
@@ -283,7 +283,7 @@ const Slide = styled.div`
     gap: 2rem;
     position: absolute;
     transition: opacity 200ms;
-    opacity: ${({ isVisible }) => isVisible ? 1 : 0};
+    opacity: ${({ $isVisible }) => $isVisible ? 1 : 0};
 
     @media(min-width: 1024px) {
         gap: 4rem;
@@ -348,8 +348,8 @@ const RoomInfo = styled.div`
     padding-left: 0.5rem;
     padding-top: 2rem;
     transition: 400ms;
-    transform: ${({ isVisible }) => isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, 100%, 0)'};
-    opacity: ${({ isVisible }) => isVisible ? '1' : '0'};
+    transform: ${({ $isVisible }) => $isVisible ? 'translate3d(0, 0, 0)' : 'translate3d(0, 100%, 0)'};
+    opacity: ${({ $isVisible }) => $isVisible ? '1' : '0'};
 
     >span {
         position: absolute;
